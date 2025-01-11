@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>플렉스 박스 wrap 실습</title>
+   <style>
+    .css_parent1{
+        display: flex;
+        flex-direction: row;
+        background-color: aliceblue;
+        width: 500px;
+        gap: 10px;
+    }
+    .css_son1{
+        width: 100px;
+        height: 100px;
+        border: 5px solid blue;
+        background-color: cadetblue;
+
+    }
+
+    .css_parent2{
+        display: flex;
+        flex-direction: row;
+        background-color: thistle;
+        width: 500px;
+        gap: 10px;
+        flex-wrap: wrap;
+
+    }
+    .css_son2{
+        width: 100px;
+        height: 100px;
+        background-color: cadetblue;
+        border: 5px solid blue;
+    }
+   </style>
+</head>
+<body>
+    <!-- 찌그러지는 상황황 -->
+    <div class="css_parent1">
+        <div class="css_son1"></div>
+        <div class="css_son1"></div>
+        <div class="css_son1"></div>
+        <div class="css_son1"></div>
+        <div class="css_son1"></div>
+        <div class="css_son1"></div>
+    </div>
+    <br><br>
+
+    <!-- 아래로 내려주는 상황 -->
+    <div class="css_parent2">
+        <div class="css_son2"></div>
+        <div class="css_son2"></div>
+        <div class="css_son2"></div>
+        <div class="css_son2"></div>
+        <div class="css_son2"></div>
+        <div class="css_son2"></div>
+
+    </div>
+</body>
+</html>

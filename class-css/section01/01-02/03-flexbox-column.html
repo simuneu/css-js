@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh; /*viewport-width, viewport-height눈에 보이는 넓이, 높이*/
+        }
+        .css_parent{
+            display: flex;
+            flex-direction: column;
+            background-color: aliceblue;
+            justify-content: center;
+            height: 100%; /*눈에 보이는 100% 설정 > %는 부모사이즈를 따라 가기에 부모에 vh, vw등을 조정*/
+        }
+    </style>
+</head>
+<body>
+    <div class="css_parent">
+        <div>메뉴</div>
+        <div>알림</div>
+    </div>
+</body>
+</html>
