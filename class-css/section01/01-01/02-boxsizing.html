@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>박스 사이징</title>
+    <style>
+        /* css초기화 */
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .css_box1{
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+            padding-top: 30px;
+            padding-left: 20px;
+            border: 10px solid blue;
+        }
+        .css_box2{
+            width: 300px;
+            height: 300px;
+            background-color: thistle;
+        }
+        .css_inputbox{
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box1">
+        <input type="text"/>
+    </div><br>
+
+    <div class="css_box2">
+        <input type="text" class="css_inputbox"/>
+    </div>
+</body>
+</html>
