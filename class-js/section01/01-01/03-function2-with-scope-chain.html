@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>함수와 스코프 실습2</title>
+   <script>
+    function parent(){
+        const banana  = 10
+        console.log(banana) //10
+        function son(){
+          
+            console.log(banana) //10
+        }
+        son() //함수 실행
+        console.log(banana) //10
+    }
+    parent() //함수 실행
+    
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

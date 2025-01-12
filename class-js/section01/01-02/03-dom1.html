@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>DOM 조작 실습</title>
+    <script>
+        const findFruit=()=>{
+            const fruit = document.getElementById("html_favorite_fruit").innerText
+            alert(`내가 좋아하는 과일은? ${fruit}`)
+        }
+
+        const updateProfile=()=>{
+            const name = document.getElementById("html_name").value
+            document.getElementById("html_hi").innerText=(`${name}님 안녕하세요?`)
+        }
+    </script>
+</head>
+<body>
+    <div id="html_favorite_fruit">apple</div>
+    <button onclick="findFruit()">find fruit</button><br><br>
+
+    오늘의 인삿말<div id="html_hi"></div>
+    <input type="text"/ id="html_name">
+    <button onclick="updateProfile()">update profile</button>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>호이스팅과 TDZ실습</title>
+  <script>
+    //var 호이스팅 문제 해결
+    // console.log(newVar)//error
+    // const newVar="lee"
+
+    // console.log(newVar2)
+    // let newVar2="kim" //error
+    
+
+
+    //중복선언 문제
+    function Func() {
+        console.log("함수실행")
+    }
+    function Func() {
+        console.log("함수덮어쓰기")
+    }
+    Func() //마지막 함수 실행
+
+
+
+    //중복 문제 해결 (1.함수선언식_중복선언 가능)
+    function newFunc1() {
+
+    }
+    function newFunc1() {
+        
+    }
+
+
+
+    //중복 문제 해결 (1.함수표현식_중복선언 불가능)
+    const newFunc2= function(){
+
+    }
+    // const newFunc2= function(){
+
+    // } 함수 이름이 같아서 error
+    newFunc2()
+
+
+
+    //중복 문제 해결 (1.화살표함수_중복선언 불가능)
+    const newFunc3=()=>{
+        
+    }
+    // const newFunc3=()=>{
+
+    // } 역시 error
+
+  </script>
+</head>
+<body>
+    
+</body>
+</html>

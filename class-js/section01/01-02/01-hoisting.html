@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>호이스팅 실습</title>
+   <script>
+
+        //함수 위에서 호출해도 실행이 됨 = 호이스팅 
+        logic1() 
+
+        function logic1() {
+            console.log("함수를 실행")
+        }
+
+        //밑에서 만든 변수, 위에서 실행하기
+        console.log(variable1) //안 나옴, error는 나지 않는다.
+        var variable1="lee" //선언과 할당
+        console.log(variable1) //lee
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

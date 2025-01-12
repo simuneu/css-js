@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>DOM 로드 실습</title>
+   <script>
+    
+        //아직html이 그려지지 않았는데 태그를 찾으려니 없어서 입력이 되지 않는다.
+        // const name = prompt("이름을 입력하세요.")
+        // document.getElementById("html_name").innerText=name
+
+    //해결  window.onload 전부 로드된 후 실행
+    window.onload=()=>{
+        const name = prompt("이름을 입력하세요.")
+        document.getElementById("html_name").innerText=name
+    }
+   </script>
+</head>
+<body>
+    <b id="html_name"></b>의 다이어리의 오신 것을 환영합니다.
+</body>
+</html>
