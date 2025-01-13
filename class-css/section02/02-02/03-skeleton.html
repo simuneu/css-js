@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>스켈레톤 실습</title>
+    <style>
+        .css_skeleton_parent{
+            width: 500px;
+            height: 500px;
+            background-color: lightgrey;
+            border-radius: 30px;
+        }
+
+        .css_skeleton_son{
+            width: 100px;
+            height: 1000px;
+            background-color: white;
+            filter: blur(70px);
+
+            animation-name: animation1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes animation1{
+            from{
+                transform: translate(-400px, -400px) rotateZ(30deg);
+            }
+            to{
+                transform: translate(700px,200px) rotateZ(30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="css_skeleton_parent">
+        <div class="css_skeleton_son"></div>
+    </div>
+    
+</body>
+</html>

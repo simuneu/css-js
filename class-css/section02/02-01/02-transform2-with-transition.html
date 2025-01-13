@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>트랜지션과 트랜스폼 함께 실습</title>
+    <style>
+        .paper{
+            width: 100px;
+            height: 150px;
+            background-color: aliceblue;
+
+            transition: transform 1s,
+                        background-color 1s;
+        }
+
+        .paper:hover{
+            transform: rotateY(180deg);
+            background-color: lavenderblush;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="paper"></div>
+</body>
+</html>

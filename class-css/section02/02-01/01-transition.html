@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>트랜지션 실습</title>
+    <style>
+        .css_box{
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+
+            transition: width 0.5s,
+                        height 0.5s, 
+                        background-color 0.5s ;
+                        white-space: pre; /*줄바꿈 인식*/
+        }
+
+        .css_box:hover{
+            width: 400px;
+            height: 400px;
+            background-color: thistle;
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box">올리면 커질 수 있음
+                        그럴 수가 있음
+    </div>
+</body>
+</html>
