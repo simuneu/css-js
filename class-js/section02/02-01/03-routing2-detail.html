@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>상세 페이지</title>
+    <script>
+        const queryString = location.search
+        const  piece = new URLSearchParams(queryString)
+            const banana=piece.get("banana")
+            const apple=piece.get("apple")
+
+            alert(`banana ${banana}개, 사과는 ${apple}개가 있다.`)
+    </script>
+</head>
+<body>
+    상세페이지 입니다.
+</body>
+</html>

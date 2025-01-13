@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>로컬 스토리지와 JSON실습</title>
+   <script>
+        const js_save=()=>{
+            const fruitBox={
+                apple:3,
+                banana:4,
+                orange:2
+            }
+            // //1. object, object로 저장
+            // localStorage.setItem("box", fruitBox) 
+            
+            //2. 객체를 JSON문자열로 저장
+            localStorage.setItem("box", JSON.stringify(fruitBox))
+        }
+
+        const js_open=()=>{
+           const fruitBox= localStorage.getItem("box")
+           const finalFruit = JSON.parse(fruitBox)
+           console.log(finalFruit)
+        }
+   </script>
+</head>
+<body>
+    <button onclick="js_save()">과일담기</button>
+    <button onclick="js_open()">과일꺼내기</button>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>로컬스토리지와 세션 스토리지 실습</title>
+   <script>
+        // //1. 변수에 저장(새로고침:지워짐, 껐다킬:지워짐)
+        // let appleBox = 0
+        // const js_save20apple =()=>{
+        //     appleBox=20
+        // }
+        // const js_open20apple=()=>{
+        //     alert(`사과바구니에 사과가 ${appleBox}개 들어있음`)
+        // }
+
+
+        // //2. 세션 스토리지에 저장(새로고침:안 지워짐, 껐다킬:지워짐)
+        // const js_save20apple =()=>{
+        //     sessionStorage.setItem("applebox",20)
+        // }
+        // const js_open20apple=()=>{
+        //     const applebox = sessionStorage.getItem("applebox")
+        //     alert(`사과바구니에 사과가 ${applebox}개 들어있음`)
+        // }
+
+
+        //3. 로컬 스토리지에 저장(새로고침:안 지워짐, 껐다킬:안 지워짐)
+        const js_save20apple =()=>{
+            localStorage.setItem("applebox",20)
+        }
+        const js_open20apple=()=>{
+            const applebox = localStorage.getItem("applebox")
+            alert(`사과바구니에 사과가 ${applebox}개 들어있음`)
+        }
+   </script>
+</head>
+<body>
+    <button onclick="js_save20apple()">사과20개 담기</button>
+    <button onclick="js_open20apple()">사과20개 꺼내기기</button>
+</body>
+</html>
