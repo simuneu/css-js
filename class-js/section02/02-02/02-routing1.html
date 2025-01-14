@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>반복문과 쿼리스트링 실습</title>
+   <script>
+      const updateFriend=()=>{
+         const friend1={
+            name:"lee",
+            age:12
+         }
+         const friend2={
+         name:"kim",
+         age:13
+         }
+         const friendList =[friend1,friend2]
+         localStorage.setItem("친구목록",JSON.stringify(friendList))
+      }
+      const drawFriend=()=>{
+         const friendList = localStorage.getItem("친구목록")
+         const friendArr = JSON.parse(friendList ===null ? "[]":friendList)
+       
+         const friendListHTMLArr= friendArr.map((el,index)=>`
+            <div>
+               <a href="./02-routing2-detail.html?number=${index}">
+                  이름은 ${el.name}이고 나이는 ${el.age}살 입니다.
+               </a>
+            </div>
+         `).join("")
+
+         document.getElementById("html_friendList").innerHTML=friendListHTMLArr
+      }
+   </script>
+   
+</head>
+<body>
+    <button onclick="updateFriend()">친구 등록</button>
+    <button onclick="drawFriend()">친구 그리기</button>
+   <div id="html_friendList"></div>
+</body>
+</html>

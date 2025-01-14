@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>반복문으로 TAG만들기 실습</title>
+    <script>
+        const js_oneTag=()=>{
+            document.getElementById("html_box1").innerHTML = `<h1>사과</h1>`
+        }
+
+        const js_threeTag=()=>{
+            const friend=["lee","moon","kim"]
+
+            //1. friend을 태그로 바꾸기[<h1>lee is number 0</h1>,...]
+            const class1HTML =  
+                    friend.map((el,index)=>`<h1>${el} is number ${index}</h1>`)
+            
+            //2.반복문 html.join("")
+            document.getElementById("html_box2").innerHTML=class1HTML.join("")
+        }
+    </script>
+</head>
+<body>
+    <div id="html_box1"></div>
+    <button onclick="js_oneTag()">h1태그 1개 만들기</button>
+
+    <div id="html_box2"></div>
+    <button onclick="js_threeTag()">h1태그 3개 만들기</button>
+</body>
+</html>

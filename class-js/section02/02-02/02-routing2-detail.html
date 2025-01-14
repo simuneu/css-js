@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>반복문과 쿼리스트링 실습</title>
+   <script>
+      const queryString = location.search
+      const box= new URLSearchParams(queryString)
+      const friendNum = box.get("number")
+
+      const friendBox = localStorage.getItem("친구목록")
+      const friendList =  JSON.parse(friendBox ===null ?"[]":friendBox)
+
+      alert(`${friendList[friendNum].name}의 페이지에 오신 것을 환영합니다.`)
+   </script>
+</head>
+<body>
+    
+</body>
+</html>
