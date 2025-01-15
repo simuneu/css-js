@@ -3,15 +3,19 @@
 <head>
     <title>반복문 실습</title>
     <script>
+        //배열
         const friend = ["lee","kim","moon"]
 
+        //반복문 : best대신 friend의 인덱스들이 들어가며 bro가 추가로 합쳐져 반복된다.
         friend.map((best)=>{
-            return best+" bro"
+            return best+" bro"  /*반환*/
         })
         
+        //축약할 수 있음(중괄호 생략 소괄호로 변환)
         const class1 = friend.map((best)=> best+" ^^")
         console.log(class1)
         
+        //(@,#) @:element(key..같은..?), #:index
         const class2 = friend.map((best, num)=> best+"bro is number"+num)
         console.log(class2)
        
