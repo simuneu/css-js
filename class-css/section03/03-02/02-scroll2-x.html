@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>가로스크롤 실습</title>
+    <style>
+        .css_box{
+            display: flex;
+            flex-direction: row ;
+            width: 300px;
+            height: 200px;
+            border: 1px solid blue;
+
+            overflow-x: scroll;
+        }
+        .css_son{
+            flex-shrink: 0; /*찌그러지지않음*/
+            width: 150px;
+            height: 180px;
+            background-color: aliceblue;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box">
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+    </div>
+</body>
+</html>
