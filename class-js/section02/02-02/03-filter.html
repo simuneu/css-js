@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>필터 실습</title>
+   <script>
+        const friend = ["lee","kim","moon"]
+
+        const boy = friend.filter((el)=>{
+            return el !=="kim"
+        })
+
+        console.log(boy)
+        //['lee', 'moon']
+        
+        const boys= friend.filter((el)=> el !== "kim")
+        
+        console.log(boys)
+        //['lee', 'moon']
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

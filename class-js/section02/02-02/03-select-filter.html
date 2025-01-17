@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>선택박스와 필터 실습</title>
+    <script>
+        const js_input=(event) =>{
+            console.log(event.target)
+            console.log(event.target.value)
+        }
+
+        const js_filtering=(event)=>{
+            console.log(event.target) //내가행동한 태그
+            console.log(event.target.value)
+
+            const friend=[
+                {name:"kim",fruit:"apple"},
+                {name:"moon",fruit:"banana"},
+                {name:"lee",fruit:"apple"}
+            ]
+
+            const selectFruit=event.target.value
+            switch(selectFruit) {
+                case "사과선택" :{
+                    const appleBoy=friend.filter((el)=> el.fruit ==="apple")
+                    console.log(appleBoy)
+                    break
+                }
+                case "바나나선택":{
+                    const bananaBoy=friend.filter((el)=> el.fruit ==="banana")
+                    console.log(bananaBoy)
+                    break
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" oninput="js_input(event)"/>
+    <br><br>
+    <select onchange="js_filtering(event)">
+        <option>과일을 선택하세요</option>
+        <option value="사과선택">사과</option>
+        <option value="바나나선택"> 바나나</option>
+    </select>
+</body>
+</html>
