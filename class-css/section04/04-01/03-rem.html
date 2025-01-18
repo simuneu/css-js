@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>rem실습</title>
+   <style>
+        html{
+            /* 기본 폰트 16->10px줄이기 => 10px을 1rem으로 설정한 것*/
+            font-size: 62.5%; 
+        }
+
+        .css_box{
+            width: 10rem; 
+            height: 10rem;
+            background-color: aliceblue;
+            margin: 20px;
+        }
+
+        @media (max-width:767px){
+            html{
+                font-size: 8px;
+            }
+        }
+   </style>
+</head>
+<body>
+    <div class="css_box">음</div>
+    <div class="css_box"></div>
+    <div class="css_box"></div>
+</body>
+</html>
