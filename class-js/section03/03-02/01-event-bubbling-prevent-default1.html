@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트 버블링 기본기능 막기 실습</title>
+    <style>
+        .css_img{
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        const js_delete=(event,num)=>{
+            event.preventDefault() //페이지 이동을 막아줌
+            alert(`${num}번 사진이 삭제되었습니다.`)
+        }
+    </script>
+</head>
+<body>
+    <a href="./01-event-bubbling-prevent-default2-detail.html">
+        <div class="css_img">
+            <button onclick="js_delete(event,1)">1번 사진 삭제</button>
+        </div>
+    </a>
+    
+    <a href="./01-event-bubbling-prevent-default2-detail.html">
+        <div class="css_img">
+            <button onclick="js_delete(event,2)">2번 사진 삭제</button>
+        </div>
+    </a>
+</body>
+</html>
