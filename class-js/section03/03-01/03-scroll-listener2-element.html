@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>태그 스크롤 리스너 실습</title>
+    <style>
+        .css_scrollBox{
+            width: 1000px;
+            height: 500px;
+            overflow: scroll;
+        }
+    </style>
+    <script>
+        window.onload=()=>{
+            document.getElementById("html_scrollBox").addEventListener("scroll",()=>{
+                const scrollLength = document.getElementById("html_scrollBox").scrollTop
+                console.log(`스크롤이 ${scrollLength}만큼 내려갔습니다.`)
+    
+                if(scrollLength>0) {
+                    document.getElementById("html_img").style="border:20px solid red"
+                }else{
+                    document.getElementById("html_img").style="border:none"
+                }
+            })
+            
+        }
+
+    </script>
+</head>
+<body>
+    <div id="html_scrollBox" class="css_scrollBox">
+        <img id="html_img" src="./00-image.jpg" width="1000px">
+    </div>
+</body>
+</html>

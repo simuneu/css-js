@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>태그 스크롤 실습</title>
+    <style>
+        .css_box{
+            width: 1000px;
+            height: 500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        const js_scrollUp=()=>{
+            // document.getElementById("html_box").scrollTo({top:0}) //스크롤을 맨 위로 올리기
+
+             //document.getElementById("html_box").scrollBy({top:-500}) //현 위치에서 500만큼 올리기
+
+            document.getElementById("html_box").scrollTo({top: 0, behavior:"smooth"}) //부드럽게 올리기
+        }
+    </script>
+</head>
+<body>
+    <div class="css_box" id="html_box">
+        <img src="./00-image.jpg" width="2000px">
+        <button onclick="js_scrollUp()">스크롤 올리기</button>
+    </div>  
+</body>
+</html>
