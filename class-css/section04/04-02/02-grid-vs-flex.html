@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>그리드와 플렉스 비교 실습</title>
+   <style>
+    .group1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 400px;
+        gap:10px;
+        background-color: aliceblue;
+    }
+
+    .group2{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+        width: 400px;
+        gap: 10px;
+        background-color: aliceblue;
+    }
+
+    .css_credit{
+        width: 100px;
+        background-color: thistle;
+        text-align: center;
+    }
+   </style>
+</head>
+<body>
+    <div class="group1">
+        <div class="css_credit">신용카드</div>  
+        <div class="css_credit">계좌이체</div>  
+        <div class="css_credit">무통장입금</div>  
+        <div class="css_credit">핸드폰결제</div>   
+        <div class="css_credit">포인트결제</div>  
+    </div><br><br>
+
+    <div class="group2">
+        <div class="css_credit">신용카드</div>  
+        <div class="css_credit">계좌이체</div>  
+        <div class="css_credit">무통장입금</div>  
+        <div class="css_credit">핸드폰결제</div>   
+        <div class="css_credit">포인트결제</div>  
+    </div>
+</body>
+</html>
