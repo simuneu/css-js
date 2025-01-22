@@ -11,8 +11,6 @@
 .body_header{
     height: 60px;
     gap:10px;
-
-    background-color: cornsilk;
     font-weight: 700;
     font-size: 18px;
     line-height: 16px;
@@ -21,7 +19,6 @@
     align-items: center;
 }
 .body_main{
-    background-color: thistle;
 }
 
 .body_main_img{
@@ -55,12 +52,57 @@
     gap:24px
 }
 .content_diary_content{
-    background-color: beige;
     width: 784px;
     height: 1167px;
+}
+.diary_thumbnail{
+   
 }   
+.one_thumbnail{
+    width: 380px;
+    height: 373px;
+    max-width: 380px;
+    min-width: 380px;
+    padding-bottom: 16px;
+    background-color: white;
+}
+.thumbnail_img{
+    width: 380px;
+    height: 285px;
+    border-radius: 16px;
+    padding: 12px;
+    gap:10px;
+}
+.thumbnail_sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 380px;
+    height: 24px;
+    padding: 0px 8px 0px 8px;
+}
+.thumbnail_fill{
+    color:  #EA5757;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+.thumbnail_date{
+    color: #919191;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+.thumbnail_title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    gap:10px;
+    padding-top: 10px;
+    padding-left: 8px;
+}
 .content_diary_menu{
-    background-color: whitesmoke;
+    background-color: white;
     width: 360px;
     height: 604px;
     border: 1px solid gray;
@@ -89,6 +131,7 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -1%;
+    margin-bottom: 10px;
 }
 .radio_group{
     width: 312px;
@@ -102,7 +145,53 @@
     line-height: 20px;
     letter-spacing: -1%;
     font-weight: 500;
+    flex-wrap: wrap;
+}
+.menu_main_content{
+    width: 312px;
+    height: 256px;
+    gap: 24px;
+}
+.input_content{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -1%;
+}
+.subject_text{
+    width: 312px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #D4D3D3;
+    padding:20px 16px 12px;
+    margin-bottom: 15px;
+}
+.content_text{
+    width: 312px;
+    height: 128px;
+    border-radius: 8px;
+    border: 1px solid #D4D3D3;
+    padding:20px 16px 12px;
+}
+input::placeholder{
+    color: #C7C7C7;
+    line-height: 1.2;
+    
+}
+
+.menu_footer{
+    width: 312px;
+    height: 48px;
+    border-radius: 8px;
+    border: solid #C7C7C7;
+    background-color: #C7C7C7;
+    padding: 8px 10px;
+    color: white;
 }
 .footer{
-    background-color: aliceblue;
+    background-color: #F2F2F2;
+    width: 1920px;
+    height: 160px;
+    padding: 24px 20px;
+    gap:10px;
 }

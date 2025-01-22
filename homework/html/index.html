@@ -20,11 +20,15 @@
                     </div>
                     <div class="content_diary">
                         <div class="content_diary_content">
-                            <div class="diary_thumnail">
-                                <img src="">
-                                <div class="thumnail_fill">기뻐요</div>
-                                <div class="thumnail_date">2025.01.21</div>
-                                <div class="thumnail_titlel"></div>
+                            <div class="diary_thumbnail">
+                                <div class="one_thumbnail">
+                                    <img class="thumbnail_img" src="../img/emotion_happy.png">
+                                    <div class="thumbnail_sub">
+                                        <div class="thumbnail_fill">기뻐요</div>
+                                        <div class="thumbnail_date">2025.01.21</div>
+                                    </div>
+                                    <div class="thumbnail_title">오늘의 일기</div>
+                                </div>
                             </div>
                         </div>
                         <div class="content_diary_menu">
@@ -36,35 +40,36 @@
                                     오늘 기분은 어땟나요?<br>
                                 </div>
                                 <div class="radio_group">
-                                    <input class="radio" type="radio">행복해요
-                                    <input class="radio" type="radio">기뻐요
-                                    <input class="radio" type="radio">슬퍼요
-                                    <input class="radio" type="radio">화나요
-                                    <input class="radio" type="radio">기타
+                                    <input class="radio" type="radio" name="fill">행복해요
+                                    <input class="radio" type="radio" name="fill">기뻐요
+                                    <input class="radio" type="radio" name="fill">슬퍼요
+                                    <input class="radio" type="radio" name="fill">화나요
+                                    <input class="radio" type="radio" name="fill">기타
                                 </div>
                                     <div class="menu_main_content">
-                                        <div class="menu_main_content_subject">
+                                        <div class="input_content">
                                             제목<br>
-                                            <input type="text">
+                                            <input class="subject_text" type="text" placeholder="제목을 입력해주세요">
                                         </div>
-                                        <div class="menu_main_content_diary">
+                                        <div class="input_content">
                                             내용<br>
-                                            <input type="text">
+                                            <input class="content_text" type="text" placeholder="내용을 입력해주세요">
+                                        </div>
                                     </div>
                                 </div>
+                                <button class="menu_footer">등록하기</button>
                             </div>
-                            <div class="menu_footer">
-                                <button>등록하기</button>
-                            </div>
+                           
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer">
-            <span>민지의 다이어리</span>
-            <span>대표:{name}</span>
-            <span>Copyright © 2024. {name} Co., Ltd.</span>
+            <span style="font-size: 20px;font-weight: 700; line-height: 16px;">민지의 다이어리</span><br>
+            <span style="font-size: 14px;font-weight: 400; line-height: 16px; color: #5F5F5F;">대표:{name}</span><br>
+            <span style="font-size: 14px;font-weight: 300; line-height: 16px; color: #919191;">Copyright © 2024. {name} Co., Ltd.</span>
         </div>
     </div>
 </body>
