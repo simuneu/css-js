@@ -201,3 +201,22 @@ input::placeholder{
     padding: 24px 20px;
     gap:10px;
 }
+.footer_title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.footer_representative {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #5F5F5F;
+}
+
+.footer_copyright {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #919191;
+}

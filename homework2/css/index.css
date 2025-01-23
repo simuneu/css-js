@@ -1,0 +1,278 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.css_layout{
+    margin: 0 20px 40px;
+}
+
+.css_header{
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 20px;
+}
+
+.css_main {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+}
+
+.css_banner_img{
+    width: 100%;
+}
+
+/* navigation */
+.css_tab{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 42px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.css_clickTab{
+    border-bottom: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    color: #000;
+}
+
+.css_unclickTab{
+    color: #ababab;
+}
+
+/* show diary */
+.html_showDiary{
+    display: flex;
+    flex-wrap: wrap;
+    gap:24px;
+}
+
+/* 만들어야 함 */
+.css_diary{
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.css_diaryPhoto{
+    height: 285px;
+    width: auto;
+}
+
+.css_fillPhoto{
+    height: 100%;
+    width: 100%;
+}
+
+.css_diaryContent{
+    width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 14px;
+  color: #777;
+}
+
+.css_fill{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.css_happy{
+    color: #ea5757;
+}
+.css_sad{
+    color: #28b4e1;
+}
+.css_wow{
+    color: #d59029;
+}
+.css_angry{
+    color: #777;
+}
+.css_ex{
+    color: #a229ed;
+}
+
+.css_date{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #919191;
+    text-align: right;
+    width: 100%;
+}
+
+.css_diaryTitle {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+/* inputBox */
+.css_inputBox{
+    min-width: 360px;
+  height: fit-content;
+  border-radius: 16px;
+  background-color: #fff;
+  border: 1px solid #d4d3d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px;
+  gap: 40px;
+  text-align: left;
+  font-size: 24px;
+  color: #000;
+}
+
+.css_inputBox_title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.css_inputBox_content {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.css_inputBox_area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.css_radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333;
+}
+
+.css_radioButton {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.css_diaryInputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.css_inputDiary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333;
+  }
+
+#html_inputTitle,#html_inputContent{
+    appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d4d3d3;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+#html_inputTitle::placeholder,
+#html_inputContent::placeholder {
+  color: #ababab;
+}
+
+.css_button{
+    width: 100%;
+    border-radius: 8px;
+    background-color: #c7c7c7;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border: 0px;
+    justify-content: center;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #f2f2f2;
+}
+
+.css_footer_area{
+    width: 100%;
+    display: flex;
+    padding: 24px 20px;
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+
+.css_footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.css_footer_title{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.css_footer_name{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #5f5f5f;
+}
+
+.css_footer_copyright{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #919191;
+}

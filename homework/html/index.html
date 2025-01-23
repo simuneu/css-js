@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>민지의 다이어리</title>
    <link href="../css/index.css" rel="stylesheet">
+   <script src="../js/index.js"></script>
 
 </head>
 <body>
@@ -12,7 +15,7 @@
                 <div>민지의 다이어리</div>
             </div>
             <div class="body_main">
-                <img class="body_main_img" src="../img/Rectangle 1.png"></img>
+                <img class="body_main_img" src="../img/Rectangle 1.png" alt="민지의 다이어리 메인 이미지"></img>
                 <div class="body_main_content">
                     <div class="content_tab">
                         <div class="tab_click">일기보관함</div>
@@ -57,20 +60,25 @@
                                     오늘 기분은 어땟나요?<br>
                                 </div>
                                 <div class="radio_group">
-                                    <input class="radio" type="radio" name="fill">행복해요
-                                    <input class="radio" type="radio" name="fill">기뻐요
-                                    <input class="radio" type="radio" name="fill">슬퍼요
-                                    <input class="radio" type="radio" name="fill">화나요
-                                    <input class="radio" type="radio" name="fill">기타
+                                    <input class="radio" type="radio" name="fill" value="행복해요">행복해요
+                                    <input class="radio" type="radio" name="fill" value="놀라워요">놀라워요
+                                    <input class="radio" type="radio" name="fill" value="슬퍼요">슬퍼요
+                                    <input class="radio" type="radio" name="fill" value="화나요">화나요
+                                    <input class="radio" type="radio" name="fill" value="기타">기타
                                 </div>
                                     <div class="menu_main_content">
                                         <div class="input_content">
-                                            제목<br>
-                                            <input class="subject_text" type="text" placeholder="제목을 입력해주세요">
+                                            <!-- 제목<br>
+                                            <input id="html_title" class="subject_text" type="text" placeholder="제목을 입력해주세요"> -->
+                                            <label for="html_title">제목</label>
+                                            <input id="html_title" class="subject_text" type="text" placeholder="제목을 입력해주세요">
                                         </div>
+
                                         <div class="input_content">
-                                            내용<br>
-                                            <input class="content_text" type="text" placeholder="내용을 입력해주세요">
+                                            <!-- 내용<br>
+                                            <input id="html_content" class="content_text" type="text" placeholder="내용을 입력해주세요"> -->
+                                            <label for="html_content">내용</label>
+                                            <input id="html_content" class="content_text" type="text" placeholder="내용을 입력해주세요">
                                         </div>
                                     </div>
                                 </div>
@@ -84,9 +92,9 @@
             </div>
         </div>
         <div class="footer">
-            <span style="font-size: 20px;font-weight: 700; line-height: 16px;">민지의 다이어리</span><br>
-            <span style="font-size: 14px;font-weight: 400; line-height: 16px; color: #5F5F5F;">대표:{name}</span><br>
-            <span style="font-size: 14px;font-weight: 300; line-height: 16px; color: #919191;">Copyright © 2024. {name} Co., Ltd.</span>
+            <span class="footer_title">민지의 다이어리</span><br>
+            <span class="footer_representative">대표:{name}</span><br>
+            <span class="footer_copyright">Copyright © 2024. {name} Co., Ltd.</span>
         </div>
     </div>
 </body>

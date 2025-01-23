@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민지의 다이어리</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="css_layout">
+        <div class="css_header">
+            <div>민지의 다이어리</div>
+        </div>
+        <img class="css_banner_img" src="./assets/images/banner.png">
+
+        <!-- navigation -->
+        <div class="css_tab">
+            <div class="css_clickTab">일기보관함</div>
+            <div class="css_unclickTab">사진보관함</div>
+        </div>
+
+        <div class="css_main">
+            <!-- show diary -->
+            <div id="html_showDiary" class="css_showDiary"></div>
+
+            <!-- diary input box -->
+            <div class="css_inputBox">
+                <div class="css_inputBox_title">📍일기 쓰기</div>
+                <div class="css_inputBox_area">
+                    <div class="css_inputBox_content">오늘 기분은 어떤가요?</div>
+                    <div class="css_radioGroup">
+                        <div class="css_radioButton">
+                            <input type="radio" name="html_fillRadio" value="행복" checked>행복
+                        </div>
+                        <div class="css_radioButton">
+                            <input type="radio" name="html_fillRadio" value="슬픔">슬픔
+                        </div>
+                        <div class="css_radioButton">
+                            <input type="radio" name="html_fillRadio" value="놀람">놀람
+                        </div>
+                        <div class="css_radioButton">
+                            <input type="radio" name="html_fillRadio" value="화남">화남
+                        </div>
+                        <div class="css_radioButton">
+                            <input type="radio" name="html_fillRadio" value="기타">기타
+                        </div>
+                    </div>
+                </div>
+                <div class="css_diaryInputBox">
+                    <div class="css_inputDiary">
+                        <div>제목</div>
+                        <input type="text" id="html_inputTitle" placeholder="제목을 입력하세요"/>
+                    </div>
+                    <div class="css_inputDiary">
+                        <div>내용</div>
+                        <textarea id="html_inputContent" rows="5" placeholder="내용을 입력하세요"></textarea>
+                    </div>
+                    <div>
+                        <button class="css_button" onclick="js_write()">
+                            등록하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="css_footer_area">
+        <div class="css_footer">
+            <div class="css_footer_title">민지의 다이어리</div>
+            <div class="css_footer_name">대표 : {name}</div>
+            <div class="css_footer_copyright">Copyright © 2024.{name} Co., Ltd.</div>
+        </div>
+    </div>
+</body>
+</html>
