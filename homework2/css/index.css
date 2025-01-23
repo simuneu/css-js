@@ -61,7 +61,7 @@ body{
 }
 
 /* show diary */
-.html_showDiary{
+.css_showDiary{
     display: flex;
     flex-wrap: wrap;
     gap:24px;
