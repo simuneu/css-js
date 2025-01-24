@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 상세 페이지</title>
+    <link href="./css/detail.css" rel="stylesheet">
+    <script src="./js/detail.js"></script>
+</head>
+<body>
+    <div class="css_header">
+        <div>민지의 다이어리</div>
+    </div>
+
+    <!-- 일기 상세 -->
+     <div class="css_diaryDetail">
+        <div class="css_diaryTitle">
+            <span id="html_diaryDetailTitle"></span>
+
+            <div class="css_diaryInfo">
+                <div class="css_fill">
+                    <img id="html_fillImg">
+                    <div id="html_diaryFill"></div>
+                </div>
+                <div class="css_date">
+                    <div id="html_date"></div>
+                    작성
+                </div>
+            </div>
+        </div>
+
+        <!-- 내용 -->
+        <div class="css_diaryContent">
+            <span>내용</span>
+            <span id="html_diaryDetailContent"
+                  class="css_diaryDetailContent">
+            </span>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="css_updateButtonArea">
+            <button class="css_updateButton" onclick="js_update()">
+                수정
+            </button>
+        </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:64px;
+    margin: 1 20px 40px;
+}
+
+.css_header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.css_diaryUpdate{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    width: 100%;
+}
+
+.css_fillSelect{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    width: 100%;
+}
+.css_fillTitle{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #000;
+}
+
+.css_radioGroup{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333;
+}
+
+.css_radioButton{
+    display: flex;
+    gap:8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.css_diaryUpdateArea{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+}

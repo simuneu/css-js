@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기수정 페이지</title>
+    <link href="./css/edit.css" rel="stylesheet">
+    <script src="./js/edit.js"></script>
+</head>
+<body>
+    <!-- header -->
+     <div class="css_header">
+        <div>민지의 다이어리</div>
+     </div>
+
+     <!-- 일기 수정 영역 -->
+      <div class="css_diaryUpdate">
+        <!-- fill -->
+         <div class="css_fillSelect">
+            <div class="css_fillTitle">오늘 기분은 어땠나요?</div>
+            <div class="css_radioGroup">
+                <div class="css_radioButton">
+                    <input type="radio" name="html_fillSelectButton" value="happy" checked>
+                    <div>행복해요</div>
+                </div>
+                <div class="css_radioButton">
+                    <input type="radio" name="html_fillSelectButton" value="sad" checked>
+                    <div>슬퍼요</div>
+                </div>
+                <div class="css_radioButton">
+                    <input type="radio" name="html_fillSelectButton" value="wow" checked>
+                    <div>놀라요</div>
+                </div>
+                <div class="css_radioButton">
+                    <input type="radio" name="html_fillSelectButton" value="angry" checked>
+                    <div>화나요</div>
+                </div>
+                <div class="css_radioButton">
+                    <input type="radio" name="html_fillSelectButton" value="etc" checked>
+                    <div>기타</div>
+                </div>
+            </div>
+         </div>
+         
+         <!-- 수정 -->
+        <div class="css_diaryUpdateArea">
+            <div class="css_updateInput">
+                <label class="css_inputLable" for="html_diaryUpdateTitleInput">제목</label>
+                <input type="text" id="html_diaryUpdateTitleInput">
+            </div>
+            <div class="css_updateInput">
+                <label class="css_inputLable" for="html_diaryUpdateContentInput">내용</label>
+                <textarea type="text" id="html_diaryUpdateContentInput" row="5"></textarea>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="css_updateButtonArea">
+            <button class="css_button css_cancelButton" onclick="js_updateCancel()">
+                취소
+            </button>
+            <button
+                class="css_button css_updateButton"
+                onclick="js_updateComplete()">
+                수정하기
+            </button>
+        </div>
+      </div>
+</body>
+</html>

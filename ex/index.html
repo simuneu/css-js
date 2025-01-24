@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="CSS_레이아웃">
+      <!--헤더-->
       <div class="CSS_헤더">
         <div>민지의 다이어리</div>
       </div>
@@ -19,6 +20,16 @@
         <div class="CSS_클릭된탭">일기보관함</div>
         <div class="CSS_클릭되지않은탭">사진보관함</div>
       </div>
+
+      <!--필터-->
+      <select class="CSS_필터" onchange="JS_필터링기능(event)">
+        <option selected>전체</option>
+        <option value="HTML_행복선택">행복해요</option>
+        <option value="HTML_슬픔선택">슬퍼요</option>
+        <option value="HTML_놀람선택">놀랐어요</option>
+        <option value="HTML_화남선택">화나요</option>
+        <option value="HTML_기타선택">기타</option>
+      </select>
 
       <div class="CSS_메인">
         <!--일기 보여주는 곳-->
@@ -31,7 +42,12 @@
             <div class="CSS_등록상자_내용">오늘 기분은 어땠나요?</div>
             <div class="CSS_라디오그룹">
               <div class="CSS_라디오버튼">
-                <input type="radio" name="HTML_기분선택버튼" value="행복" checked/>
+                <input
+                  type="radio"
+                  name="HTML_기분선택버튼"
+                  value="행복"
+                  checked
+                />
                 <div>행복해요</div>
               </div>
               <div class="CSS_라디오버튼">
@@ -56,7 +72,10 @@
             <div class="CSS_일기쓰기">
               <div>제목</div>
               <input
-                type="text" id="HTML_제목입력창" placeholder="제목을 입력해 주세요." />
+                type="text"
+                id="HTML_제목입력창"
+                placeholder="제목을 입력해 주세요."
+              />
             </div>
             <div class="CSS_일기쓰기">
               <div>내용</div>
@@ -77,11 +96,11 @@
     </div>
 
     <!--푸터-->
-    <div class="CSS_푸터_영역">
+    <div id="HTML_푸터" class="CSS_푸터_영역">
       <div class="CSS_푸터">
         <div class="CSS_푸터_제목">민지의 다이어리</div>
-        <div class="CSS_푸터_대표">대표 : {name}</div>
-        <div class="CSS_푸터_Copyright">Copyright © 2024.{name} Co., Ltd.</div>
+        <p class="CSS_푸터_대표">대표 : {name}</p>
+        <p class="CSS_푸터_Copyright">Copyright © 2024.{name} Co., Ltd.</p>
       </div>
     </div>
   </body>

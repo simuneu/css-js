@@ -11,6 +11,11 @@ body {
   align-items: center;
 }
 
+a {
+  appearance: none;
+  text-decoration: none;
+}
+
 .CSS_레이아웃 {
   margin: 0 20px 40px;
 }
@@ -61,7 +66,17 @@ body {
   color: #ababab;
 }
 
-/* 일기 보여주는 곳*/
+/* 필터 */
+.CSS_필터 {
+  min-width: 120px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid #c7c7c7;
+  height: 32px;
+  margin-bottom: 42px;
+}
+
+/* 일기 보여주는 곳 */
 .CSS_일기보여주는곳 {
   display: flex;
   flex-wrap: wrap;
