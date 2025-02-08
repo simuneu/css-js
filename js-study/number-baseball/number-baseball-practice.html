@@ -17,17 +17,66 @@
         const $logs= document.getElementById('logs');
 
         const numbers = [];//답
-        for(let n; n<=9; n+=1) {
+        for(let n=0; n<9; n+=1) {
             numbers.push(n+1);
         } //9개의 랜덤 수를 뽑고 넣기
 
         const answer=[];
         for(let n=0; n<4; n+=1){
-            const index = Math.floor(Math.random*numbers.length-n);
+            const index = Math.floor(Math.random()*numbers.length);
             answer.push(numbers[index]);
             numbers.splice(index,1);
         }
         console.log(answer);
+
+        const tries=[];
+        function checkInput(input){
+            if(input.length !== 4) {
+                return alert('숫자 네 개를 입력하세요.');
+            }
+            if(new Set(input).size!==4) {
+                return alert('중복값을 검토하세요.');
+            }
+            if(tries.includes(input)) {
+                return alert('이미 시도했습니다..');
+            }
+            return true;
+        } //검토코드
+
+        $form.addEventListener('submit',(event)=>{
+            event.preventDefault() ;
+            const value=$input.value; //답 입력
+            $input.value=''; //초기화
+            //문제있음
+            if(!checkInput(value)){
+                return;
+            }
+            //입력값 문제없음
+            if(answer.join('')===value) {
+                $logs.textContent = '홈런';
+                return;
+            }
+            if(tries.length>=9){
+                const message = document.createTextNode(`패배 정답은 ${answer.join('')}`);
+                $logs.appendChild(message);
+                return;
+            }
+
+            let strike =0;
+            let ball = 0;
+            for(let i=0; i < answer.length; i++){
+                const index = value.indexOf(answer[i]);
+                if(index >-1) {
+                    if(index ===i){
+                        strike+=1;
+                    }else{
+                        ball+=1;
+                    }
+                }
+            }
+            $logs.append(`${value}: ${strike}스트라이크 ${ball}볼`, document.createElement('br'));
+            tries.push(value);//입력한 값 tries배열에 저장
+        });
     </script>
 </body>
 </html>
