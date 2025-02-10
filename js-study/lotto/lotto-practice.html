@@ -29,8 +29,11 @@
         const $form = document.getElementById('form');
         const $result = document.getElementById('result');
         const $bonus = document.getElementById('bonus');
+        const setTimeoutPromise=(ms)=>new Promise((resolve, reject)=>{
+            setTimeout(resolve, ms); //1. promise가 아닌 함수를 new Promise로 바꿔줌줌
+        });
 
-        $form.addEventListener('submit', (event)=>{
+        $form.addEventListener('submit', async(event)=>{ //event함수를 async로 감싸줌줌
             event.preventDefault();
             //검사
             const string = event.target.input.value;
@@ -68,15 +71,40 @@
                     $target.appendChild($ball);
             } //근데 함수선언은 웬만하면 위에~
 
-            for(let i=0; i <6; i++) {
-                setTimeout(()=>{
-                    drawBall($result, winBalls[i])
-                },(1+i)*1000) ;
-            }
+        
 
-            setTimeout(()=>{
+            for(let i=0; i <6; i++) {
+                await setTimeoutPromise(1000);
+                    drawBall($result, winBalls[i])
+                }
+                await setTimeoutPromise(1000)
                 drawBall($bonus, bonusBall);
-            }, 7000);
+
+                await setTimeoutPromise(0); //화면 수정할 시간을 주면 보너스 숫자 생기기 전에 alert가 뜨는
+                                            //버그를 고칠 수 있음
+
+                let count =0;
+                myNumbers.forEach((my)=>{
+                    if(winBalls.includes(my)) {
+                        count++;
+                    }
+                });
+                if(count ===6) {
+                    alert('1등!')
+                }else if(count===5) {
+                    if(myNumbers.includes(bonus)){
+                        alert('2등 보너너스로 6개 맞춤')
+                    }else{
+                        alert('3등')
+                    }
+                }else if(count===4) {
+                    alert('4등')
+                }else if(count===3) {
+                    alert('5등')
+                }else{
+                    alert('꽝이지요')
+                }
+            });
 
             
             // for(let i =0; i<6; i++) {
@@ -93,7 +121,7 @@
             //         $ball.textContent=bonus;
             //         $bonus.appendChild($ball);
             //     }, 7000);
-        });
+
 
 
     </script>
