@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응속도 테스트</title>
+    <style>
+        #screen{
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            user-select: none;
+        }
+        #screen.waiting{
+            background-color: azure;
+        }
+        #screen.ready{
+            background-color: thistle;
+        }
+        #screen.now{
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen" class="waiting">클릭해서 시작하세요</div> //태그에 특정한 역할이 부여되면 클래스를 사용
+    <div id="result"></div>
+    <script>
+        const $screen = document.getElementById("screen");
+        const $result = document.getElementById("result");
+
+        $screen.addEventListener('click', (event)=>{
+            if(event.target.classList.contains('waiting')) {
+
+            }else if(event.target.classList.contains('ready')){
+
+            }else if(event.target.classList.contains('now')){
+
+}
+        })
+    </script>
+</body>
+</html>
