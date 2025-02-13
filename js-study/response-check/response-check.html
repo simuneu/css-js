@@ -23,20 +23,46 @@
     </style>
 </head>
 <body>
-    <div id="screen" class="waiting">클릭해서 시작하세요</div> //태그에 특정한 역할이 부여되면 클래스를 사용
+    <!-- 태그에 특정한 역할이 부여되면 클래스를 사용 -->
+    <div id="screen" class="waiting">클릭해서 시작하세요</div> 
     <div id="result"></div>
     <script>
         const $screen = document.getElementById("screen");
         const $result = document.getElementById("result");
 
+        let startTime;
+        let endTime;
+        const records=[];
         $screen.addEventListener('click', (event)=>{
-            if(event.target.classList.contains('waiting')) {
+            if(event.target.classList.contains('waiting')) { //event.target=클릭한 타겟=screen
+                $screen.classList.remove('waiting');
+                $screen.classList.add('ready');
+                $screen.textContent='초록색이 되면 클릭하세요.';
+                setTimeout(function(){
+                    startTime=new Date();
+                    $screen.classList.remove('ready');
+                    $screen.classList.add('now');
+                    $screen.textContent='클릭하세요!';
+                //처음 시간 측정
+                },Math.floor(Math.random()*1000)+2000); //2000~3000사이의 수, 2초~3초
+            }else if(event.target.classList.contains('ready')){ //빨강
 
-            }else if(event.target.classList.contains('ready')){
+            }else if(event.target.classList.contains('now')){ //초록
+                //끝시간재기(현재일수록 시간이 더 큼)
+                endTime=new Date();
+                const current = endTime-startTime;
+                records.push(current);
+                const avg=records.reduce((a,c)=>a+c) / records.length;
 
-            }else if(event.target.classList.contains('now')){
+                $result.textContent=`현재 : ${current}ms, 평균 : ${avg}ms`;
+                startTime=null;
+                endTime=null;
+                $screen.classList.remove('now');
+                $screen.classList.add('waiting');
+                $screen.textContent='클릭해서 다시 시작하세요!';
+                //시간 사이 저장
 
-}
+            }
         })
     </script>
 </body>
