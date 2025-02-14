@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틱택토</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const {body}=document //const body=document.body; 객체의 속성과 속성일 변수에 담는 변수명이 같을 때 사용
+        const $table = document.createElement('table');
+        const $result = document.createElement('div');
+        const rows=[];
+        let turn='O'
+        
+        const checkWinner=(target)=>{
+            let rowIndex;
+            let cellIndex;
+            rows.forEach((row,ri)=>{
+                row.forEach((cell,ci)=>{
+                    if(cell ===target) {
+                        rowIndex=ri;
+                        cellIndex=ci;
+                    }
+                });    
+            });
+            let hasWinner = false;
+            //가로줄검사
+            if(
+                rows[rowIndex][0].textContent ===turn &&
+                rows[rowIndex][1].textContent ===turn &&
+                rows[rowIndex][2].textContent ===turn 
+            ) {
+                hasWinner = true;
+            }
+            //세로줄 검사
+            if(
+                rows[0][cellIndex].textContent ===turn &&
+                rows[1][cellIndex].textContent ===turn &&
+                rows[2][cellIndex].textContent ===turn 
+            ){
+                hasWinner = true;
+            }
+            //대각선 검사
+            if(
+                rows[0][0].textContent ===turn &&
+                rows[1][1].textContent ===turn &&
+                rows[2][2].textContent ===turn 
+            ){
+                hasWinner = true;
+            }
+            if(
+                rows[0][2].textContent ===turn &&
+                rows[1][1].textContent ===turn &&
+                rows[2][0].textContent ===turn 
+            ){
+                hasWinner = true;
+            }
+            return hasWinner; 
+        };
+
+        const callback=(event)=>{
+            if(event.target.textContent !=='') {//칸에 글자?
+                console.log('빈칸이 아닙니다.');
+                return;
+                // event.currentTarget진짜 테이블 선택하고싶을 때
+            }
+            console.log('빈칸입니다.')
+            event.target.textContent=turn;
+            
+            //승리검사
+            if(checkWinner(event.target)){
+                $result.textContent=`${turn}님이 승리`;
+                return;
+            };
+            //무승부검사
+            let draw=true;
+            rows.forEach((row)=>{
+                row.forEach((cell)=>{
+                    if(!cell.textContent) { //원래 무승부라고 설정
+                        draw=false;
+                    }
+                });
+            });
+            if(draw){
+                $result.textContent=`무승부`;
+                return;
+            }
+
+            if(turn==='O'){
+                turn='X';
+            }else if(turn==='X') {
+                turn='O';
+            }
+        };
+                
+
+        for(let i=0; i<3; i++) {
+            const $tr=document.createElement('tr');
+            const cells=[];
+            for(let j=0; j<3; j++) {
+                const $td= document.createElement('td');
+                cells.push($td);
+                $tr.append($td);
+            }
+            rows.push(cells)
+            $table.append($tr);
+        }
+        $table.addEventListener('click',callback);
+        document.body.append($table);
+        document.body.append($result);
+
+    </script>
+</body>
+</html>
+
+<!-- 이벤트 버블링: 자식 요소에서 발생한 이벤트가 부모 요소로 전파=>자식 클릭시 부모도 클릭되기
+이벤트 캡처링 : 부모 요소에서 발생한 이벤트가 자식 요소로 전파 -->

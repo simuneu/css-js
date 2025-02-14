@@ -33,12 +33,14 @@
         let startTime;
         let endTime;
         const records=[];
+        let timeOutId;
+
         $screen.addEventListener('click', (event)=>{
             if(event.target.classList.contains('waiting')) { //event.target=클릭한 타겟=screen
                 $screen.classList.remove('waiting');
                 $screen.classList.add('ready');
                 $screen.textContent='초록색이 되면 클릭하세요.';
-                setTimeout(function(){
+                timeOutId= setTimeout(function(){
                     startTime=new Date();
                     $screen.classList.remove('ready');
                     $screen.classList.add('now');
@@ -46,15 +48,26 @@
                 //처음 시간 측정
                 },Math.floor(Math.random()*1000)+2000); //2000~3000사이의 수, 2초~3초
             }else if(event.target.classList.contains('ready')){ //빨강
-
+                //빨리 클릭 막기
+                clearTimeout(timeOutId);
+                $screen.classList.remove('ready');
+                $screen.classList.add('waiting');
+                $screen.textContent='너무 성급하시군요!';
             }else if(event.target.classList.contains('now')){ //초록
-                //끝시간재기(현재일수록 시간이 더 큼)
+                //끝시간 재기(현재일수록 시간이 더 큼)
                 endTime=new Date();
                 const current = endTime-startTime;
                 records.push(current);
                 const avg=records.reduce((a,c)=>a+c) / records.length;
 
                 $result.textContent=`현재 : ${current}ms, 평균 : ${avg}ms`;
+                const topFive=records.sort((p,c)=>p-c).slice(0,5);
+                    topFive.forEach((top, index)=>{
+                        $result.append(
+                            document.createElement('br'),
+                            `${index+1}위 : ${top}ms`,
+                        );
+                    });
                 startTime=null;
                 endTime=null;
                 $screen.classList.remove('now');
