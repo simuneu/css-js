@@ -14,3 +14,16 @@ for(let i=0; i<5; i++) { //행 생성 길이5
 // 2 (4) [1, 1, 1, 1]
 // 3 (4) [1, 1, 1, 1]
 // 4 (5) [1, 1, 1, 1]
+
+const obj =[a,b];
+
+const {a,b}=obj
+
+// const obj.a;
+// const obj.b;
+
+const arr=[1,2,5];
+const [one, two, three]=arr
+// const one=arr[0]
+// const two=arr[1]
+// const three=arr[2]

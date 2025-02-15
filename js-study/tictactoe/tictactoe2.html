@@ -63,6 +63,8 @@
             return hasWinner; 
         };
 
+        let clickable=true;
+
         const callback=(event)=>{
             if(event.target.textContent !=='') {//칸에 글자?
                 console.log('빈칸이 아닙니다.');
@@ -80,22 +82,36 @@
             };
             //무승부검사
             const draw=rows.flat().every((cell)=>cell.textContent);
-            rows.forEach((row)=>{
-                row.forEach((cell)=>{
-                    if(!cell.textContent) { //원래 무승부라고 설정(하나라도 빈칸이 있으면 무승부가 아님)
-                        draw=false;
-                    }
-                });
-            });
             if(draw){
                 $result.textContent=`무승부`;
                 return;
             }
 
-            if(turn==='O'){
-                turn='X';
-            }else if(turn==='X') {
-                turn='O';
+            turn = turn === 'O' ? 'X' : 'O';
+
+            if(turn==='X') {
+                clickable=false;
+                setTimeout(()=>{
+                    const emptyCell = rows.flat().filter((v)=> !v.textContent);
+                    const randomCell = emptyCell[Math.floor(Math.random()*emptyCell.length)];
+                    clickable=true;
+                    randomCell.textContent='X';
+                    const hasWinner = checkWinner(randomCell);
+
+                },500)
+
+                //승자O
+                if(hasWinner){
+                    $result.textContent = `${turn}님이 승리`
+                    return;
+                }
+                //승자없음
+                const draw = rows.flat().every((cell)=>cell.textContent);
+                if(draw){
+                    $result.textContent=`무승부`;
+                    return;
+                }
+                turn='O'
             }
         };
                 
