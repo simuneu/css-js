@@ -105,7 +105,11 @@
                     this.updateMonsterStat();
                     this.showMessage(`몬스터와 마주쳤다. ${this.monster.name}인 것 같다.`)
                 }else if(input==='2'){
+                    this.hero.hp=this.hero.maxHp;
+                    this.updateHeroStat();
+                    this.showMessage('충분한 휴식을 취했다.')
                 }else if(input==='3'){
+                    this.showMessage(' ');
                     this.quit();
                 }
             }
@@ -130,9 +134,16 @@
                     this.updateHeroStat();
                     this.updateMonsterStat();
                 }else if(input==='2'){
-
+                    const {hero,monster}=this;
+                    hero.hp=Math.min(hero.maxHp, hero.hp+20);
+                    monster.attack(hero);
+                    this.showMessage('체력이 조금 회복되었다.');
+                    this.updateHeroStat();
                 }else if(input==='3'){
                     this.changeScreen('game');
+                    this.showMessage('도망 ===3');
+                    this.monster=null;
+                    this.updateMonsterStat();
                 }
             }
             updateHeroStat(){
@@ -183,19 +194,29 @@
 
         };
 
-        class Hero{
-            constructor(game, name){
+        class Unit{
+            constructor(game, name, hp, att, xp){
                 this.game=game;
                 this.name=name;
-                this.lev=1;
-                this.maxHp=100;
-                this.hp=100;
-                this.xp=0;
-                this.att=10;
+                this.maxHp=hp;
+                this.hp=hp;
+                this.xp=xp;
+                this.att=att;
             }
             attack(target){
                 target.hp-=this.att;
             }
+        }
+        class Hero extends Unit{
+            constructor(game, name){
+                super(game, name, 100, 10, 0);
+                this.lev=1;
+            }
+            attack(target){
+                super.attack(target);
+                console.log('영웅이 공격');
+            }
+
             heal(target){
                 this.hp+=20;
                 this.hp-=monster.att;
@@ -213,17 +234,13 @@
             }
         };
 
-        class Monster{
+        class Monster extends Unit{
             constructor(game, name, hp, att, xp){
-                this.game=game;
-                this.name=name;
-                this.maxHp=hp;
-                this.hp=hp;
-                this.xp=xp;
-                this.att=att;
+                super(game, name, hp, att, xp);
             }
             attack(target){
-                target.hp-=this.att;
+                super.attack(target);
+                console.log('몬스터가 공격');
             }
         }
 
