@@ -54,6 +54,7 @@
         let shuffled=[];
         let clicked=[];
         let completed=[];
+        let clickable=false;
 
         function shuffle(){
             for(let i=0; colorCopy.length>0; i+=1){
@@ -79,6 +80,9 @@
         }
 
         function onClickCard(){
+            if(!clickable || completed.includes(this)|| clickable[0]===this){
+                return;
+            }
             this.classList.toggle('flipped');
             clicked.push(this);
             if(clicked.length !==2){
@@ -87,23 +91,18 @@
             const firstBackColor=clicked[0].querySelector('.card-back').style.backgroundColor;
             const secondBackColor=clicked[1].querySelector('.card-back').style.backgroundColor;
             if(firstBackColor===secondBackColor) {
-                completed.push(clicked[0]);
-                completed.push(clicked[1]);
-                clicked=[];
-                if(completed.length!==total){
-                    return;
-                }
-                alert('축하합니다.');
-                return;
+            clickable=false;
+                setTimeout(()=>{
+                    clicked[0].classList.remove('flipped');
+                    clicked[1].classList.remove('flipped');
+                    clicked=[];
+                    clickable=true;
+                },500)
             }
-            setTimeout(()=>{
-                clicked[0].classList.remove('flipped');
-                clicked[1].classList.remove('flipped');
-                clicked=[];
-            },500)
         }
 
         function startGame(){
+            clickable=false;
             shuffle();
             for(let i=0; i <total; i+=1) {
                 const card=createCard(i);
@@ -120,9 +119,23 @@
                 document.querySelectorAll('.card').forEach((card)=>{
                     card.classList.remove('flipped');
                 });
+                clickable=true;
             },5000)
         }
         startGame();
+
+        function resetGame(){
+            $wrapper.innerHTML='';
+            colorCopy=colors.concat(colors);
+            shuffle=[];
+            completed=[];
+            startGame();
+        }
     </script>
 </body>
 </html>
+
+<!-- 호출스택 :  함수들이 실행되는 공간
+백그라운드 : 타이머, 이벤트리스너
+태스크 큐 : 타이머, 이벤트리스너에 들어있는 콜백함수들
+이벤트 루프 :  호출스택이 비어있을 때 태스크 큐에서 꺼내 하나씩 실행되어짐 -->
