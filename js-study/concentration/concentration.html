@@ -48,9 +48,11 @@
     <script>
         const $wrapper=document.getElementById('wrapper');
         
-        const total=12;
-        const colors=['pink','orange','green','skyblue','white','yellow'];
-        let colorCopy=colors.concat(colors);
+        const total=parseInt(prompt('카드 개수를 짝수로 입력, 최대20개.'));
+        const colors=['pink','orange','green','skyblue','white',
+                        'yellow', 'gray','black','violet','cyan'];
+        let colorSlice=colors.slice(0,total/2);
+        let colorCopy=[...colorSlice, ...colorSlice];
         let shuffled=[];
         let clicked=[];
         let completed=[];
@@ -91,14 +93,26 @@
             const firstBackColor=clicked[0].querySelector('.card-back').style.backgroundColor;
             const secondBackColor=clicked[1].querySelector('.card-back').style.backgroundColor;
             if(firstBackColor===secondBackColor) {
-            clickable=false;
+                completed.push(clickable[0]);
+                completed.push(clickable[1]);
+                clicked=[];
+                if(completed.length !== total){
+                    return;
+                }
+                const endTime=new Date();
                 setTimeout(()=>{
-                    clicked[0].classList.remove('flipped');
-                    clicked[1].classList.remove('flipped');
-                    clicked=[];
-                    clickable=true;
-                },500)
+                    alert(`축하합니다! ${(endTime - startTime)/1000}초 걸렸습니다.`);
+                    resetGame();
+                },1000);
+                return;
             }
+            clickable=false;
+            setTimeout(()=>{
+                clicked[0].classList.remove('flipped');
+                clicked[1].classList.remove('flipped');
+                clicked=[];
+                clickable=true;
+            },500)
         }
 
         function startGame(){
@@ -120,6 +134,7 @@
                     card.classList.remove('flipped');
                 });
                 clickable=true;
+                startTime=new Date();
             },5000)
         }
         startGame();
