@@ -35,11 +35,11 @@
             QUESTION:-2,
             FLAG:-3,
             QUESTION_MINE:-4,
-            FLAG_MAIN:-5,
+            FLAG_MINE:-5,
             MINE:-6,
             OPENED:0,
         }
-        let date;
+        let data;
 
         function planMine(){
             const candidate=Array(row*cell).fill().map((arr,i)=>{
@@ -66,6 +66,27 @@
             return data;
         }
 
+        function onRightClick(event){
+            event.preventDefault();
+            const target=event.target;
+            const rowIndex= target.parentNode.rowIndex;
+            const cellIndex=target.cellIndex;
+            const cellData=data[rowIndex][cellIndex];
+            if(cellData ===CODE.MINE) {
+                data[rowIndex][cellIndex]=CODE.QUESTION_MINE;
+                target.className='question';
+                target.textContent='?'
+            }else if(cellData===CODE.QUESTION_MINE){
+                data[rowIndex][cellIndex]=CODE.FLAG_MINE;
+                target.className='flag';
+                target.textContent='!';
+            }else if(cellData===CODE.FLAG_MINE){
+                data[rowIndex][cellIndex]=CODE.MINE;
+                target.className='';
+                target.textContent='';
+            }
+        }
+
         function drawTable(){
             data=planMine();
             data.forEach((row)=>{
@@ -78,9 +99,10 @@
                     $tr.append($td);
                 });
                 $tbody.append($tr);
-            })
+                $tbody.addEventListener('contextmenu', onRightClick);
+            });
         }
-
+        
         drawTable();
     </script>
 </body>
