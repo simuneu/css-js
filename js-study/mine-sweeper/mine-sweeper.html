@@ -83,6 +83,18 @@
             }else if(cellData===CODE.FLAG_MINE){
                 data[rowIndex][cellIndex]=CODE.MINE;
                 target.className='';
+                target.textContent='X';
+            }else if(cellData===CODE.NORMAL){
+                data[rowIndex][cellIndex]=CODE.QUESTION;
+                target.className='question';
+                target.textContent='?';
+            }else if(cellData===CODE.QUESTION){
+                data[rowIndex][cellIndex]=CODE.FLAG;
+                target.className='flag';
+                target.textContent='!';
+            }else if(cellData===CODE.FLAG) {
+                data[rowIndex][cellIndex]=CODE.NORMAL;
+                target.className='';
                 target.textContent='';
             }
         }
