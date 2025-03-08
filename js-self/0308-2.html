@@ -23,36 +23,22 @@
         let newWord;
 
         const onClickButton=()=>{
-            if(!word){
+            if(!word||word[word.length-1]===newWord[0]){ //조건 두 개 한꺼번에 
                word=newWord;
                $word.textContent=word
-               $input.value='';
-               $input.focus();
                const order=parseInt($order.textContent)
                if(order===number){ //현재순서
                 $order.textContent=1;
-               }else{
-                $order.textContent=order+1;
-               }
-            }else{
-                if(word[word.length-1]===newWord[0]) {
-                    word=newWord;
-                    $word.textContent=word
-                    $input.value='';
-                    $input.focus();
-                    const order=parseInt($order.textContent)
-                    if(order===number){ //현재순서
-                        $order.textContent=1;
-                    }else{
-                        $order.textContent=order+1;
-                    }
                 }else{
-                    alert('틀렸습니다.');
-                    $input.value='';
-                    $input.focus();
+                    $order.textContent=order+1;
                 }
-            }
-        }
+            }else{
+                    alert('틀렸습니다.');
+                }
+                $input.value=''; //공통으로 실행되는 것 밖으로 
+                $input.focus();
+            };
+        
        
         const onInput=()=>{
             newWord=event.target.value;//글자입력하면 newWord에 저장
