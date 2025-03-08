@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿵쿵따</title>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어 : <span id="word"></span></div>
+        <input type="text"><button>입력</button>
+
+    <script>
+        const number= parseInt(prompt("몇 명이 참여하나요?"))
+        // alert(number+'명');
+        // const yesOrNo=confirm('입력한 인원이 맞나요?')
+
+        const $button = document.querySelector('button');
+        const $input = document.querySelector('input');
+        const $order = document.getElementById('order');
+        const $word = document.getElementById('word');
+        let word;
+        let newWord;
+
+        const onClickButton=()=>{
+            if(!word){
+               word=newWord;
+               $word.textContent=word
+               $input.value='';
+            }else{
+                
+            }
+        }
+       
+        const onInput=()=>{
+            newWord=event.target.value;//글자입력하면 newWord에 저장
+        }
+
+        document.querySelector('button').addEventListener('click',onClickButton)
+        document.querySelector('input').addEventListener('input', onInput);
+
+    </script>
+</body>
+</html>
