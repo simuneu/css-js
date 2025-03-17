@@ -77,12 +77,12 @@
                     score+=1;
                     message='승리';
                 }else if(diff===-2||diff===1) {
-                    message='패배배';
+                    message='패배';
                     score-=1;
                 }else if(diff===0){
                     message='무승부';
                 }
-                $score.textContent= `${message} 총 ${score}점`
+                $score.innerHTML= `${message}</br> 총 ${score}점`
                 setTimeout(()=>{
                     clickable=true;
                     intervalId=setInterval(changeComputerHand,50);
