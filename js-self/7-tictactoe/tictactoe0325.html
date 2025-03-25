@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틱택토</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const {body}=document;
+        const $table= document.createElement('table');
+        const $result= document.createElement('div');
+        let turn='O';
+
+        const checkWinner=(target)=>{
+            let rowIndex;
+            let cellIndex;
+            rows.forEach((row, ri)=>{
+                row.forEach((cell, ci)=>{
+                    if(cell===target){
+                        rowIndex=ri;
+                        cellIndex=ci;
+                    }
+                })
+            });
+            let hasWinner=false;
+            if(//가로줄
+                rows[rowIndex][0].textContent===turn&&
+                rows[rowIndex][1].textContent===turn&&
+                rows[rowIndex][2].textContent===turn
+            ){
+                hasWinner=true;
+            }else if(//세로줄
+                rows[0][cellIndex].textContent===turn&&
+                rows[1][cellIndex].textContent===turn&&
+                rows[2][cellIndex].textContent===turn
+            ){
+                hasWinner=true;
+            }else if(//대각선
+                rows[0][0].textContent===turn&&
+                rows[1][1].textContent===turn&&
+                rows[2][2].textContent===turn
+            ){
+                hasWinner=true;
+            }else if(//대각선
+                rows[0][2].textContent===turn&&
+                rows[1][1].textContent===turn&&
+                rows[2][0].textContent===turn
+            ){
+                hasWinner=true;
+            }
+            return hasWinner;
+        }
+
+        const callback=(event)=>{
+            if(event.target.textContent!=''){
+                return; //빈칸이 아니고 차있으면 return
+            }
+            event.target.textContent=turn;
+
+            if(checkWinner(event.target)){
+                $result.textContent=`${turn}님의 승리`
+                // $table.removeEventListener('click', callback);
+                return;
+            }
+            let draw=true;
+            rows.forEach((row)=>{
+                row.forEach((cell)=>{
+                    if(!cell.textContent){
+                        draw=false;
+                    }
+                })
+            })//비어있으면 무승부아님
+            if(draw){
+                $result.textContent='무승부';
+                $table.removeEventListener('click', callback);
+                return;
+            }
+
+            if(turn==='O'){
+                turn='X';
+            }else if(turn==='X'){
+                turn='O'
+            }
+        };
+
+        const rows=[];
+        for(let i=0; i<3; i++) {
+            const cells= [];
+            const $tr= document.createElement('tr');
+            $table.append($tr);
+            for(let j=0; j<3; j++){
+                const $td= document.createElement('td');
+                cells.push($td);
+                $tr.append($td);
+            }
+            rows.push(cells);
+        }
+        $table.addEventListener('click',callback);
+        document.body.append($table);
+        document.body.append($result);
+    </script>
+</body>
+</html>
