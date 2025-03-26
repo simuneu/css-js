@@ -75,8 +75,11 @@
                 $table.removeEventListener('click', callback);
                 return;
             }
+            //const draw = rows.flat().every((cell)=>cell.textContent);
+            //2차원 배열 1차원으로 변경 후 every로 펼쳐서 cell을 검사, 
+            //cell이 다 차 있으면 true
 
-            let draw=true;//모든칸이 채워졋다고 가정정
+            let draw=true;//모든칸이 채워졋다고 가정
             rows.forEach((row)=>{
                 row.forEach((cell)=>{
                     if(cell.textContent === ""){
