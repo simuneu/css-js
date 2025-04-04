@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox세로</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            /*viewport화면에 보이는 높이(vh,vw)*/
+        }
+        .css_box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: aliceblue;
+            height: 100%;  
+            /*화면의 100%가 아닌 부모의 100%*/
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box">
+        <div>메뉴</div>
+        <div>알림</div>
+    </div>
+</body>
+</html>
