@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+            transition: transform 0.5s,
+                        background-color 1.5s;
+        }
+        .box:hover{
+            background-color: burlywood;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

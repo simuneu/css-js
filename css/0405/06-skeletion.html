@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skeleton</title>
+    <style>
+        .skeletonBody{
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+            border-radius: 30px;
+        }
+        .skeletonBar{
+            width: 100px;
+            height: 1000px;
+            background-color: white;
+            filter: blur(70px);
+
+            animation-name: animation1;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animation1{
+            from{
+                transform: translate(-400px, -400px) rotateZ(30deg);
+            }
+            to{
+                transform: translate(700px, 200px) rotateZ(30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="skeletonBody">
+        <div class="skeletonBar"></div>
+    </div>
+   
+</body>
+</html>
