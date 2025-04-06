@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬, 세션스토리지</title>
+    <script>
+        // //변수 저장
+        //     let apple = 0;
+        //     const js_addApple=()=>{
+        //         apple = 20;
+        //     }
+        //     const js_delApple=()=>{
+        //         alert(`사과가 ${apple}개 들어있음`)
+        //     }
+
+        // //세션 저장
+        //     const js_addApple=()=>{
+        //         sessionStorage.setItem('apple',20);
+        //     }
+        //     const js_delApple=()=>{
+        //         const apple = sessionStorage.getItem('apple')
+        //         alert(`사과가 ${apple}개 들어있음`)
+        //     }
+
+        //로컬 저장
+            const js_addApple=()=>{
+                localStorage.setItem('apple',20);
+            }
+            const js_delApple=()=>{
+                    const apple = localStorage.getItem('apple')
+                 alert(`사과가 ${apple}개 들어있음`)
+            }
+
+    </script>
+</head>
+<body>
+    <button onclick="js_addApple()">사과담기</button>
+    <button onclick="js_delApple()">사과확인</button>
+</body>
+</html>

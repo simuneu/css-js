@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문으로 태그만들기</title>
+    <script>
+        const js_makingTag1=()=>{
+            document.getElementById('html_note1').innerHTML=`<h1>h1태그 생성</h1>`  
+        }
+
+        const js_makingTag2=()=>{
+            const colors = ['red', 'orange', 'green']
+            //태그로 바꾸기
+            const mapColor = colors.map((color, i)=>`<h1>${i+1}번 색깔 : ${color}</h1>`)
+            //join
+            document.getElementById('html_note2').innerHTML=mapColor.join('');
+        }
+    </script>
+</head>
+<body>
+    <div id="html_note1"></div>
+    <button onclick="js_makingTag1()">h1태그 1개 만들기</button>
+    <div id="html_note2"></div>
+    <button onclick="js_makingTag2()">h1태그 3개 만들기</button>
+
+</body>
+</html>

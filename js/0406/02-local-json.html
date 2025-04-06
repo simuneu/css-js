@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <script>
+        const js_addApple=()=>{
+            const box = {
+                redApple1: 3,
+                greenApple2: 2,
+                blueApple:4, 
+            }
+            //객체 그대로 저장
+            localStorage.setItem('appleBox', box)
+            //객체 JSON으로 저장
+            localStorage.setItem('appleBox', JSON.stringify(box));
+        }
+
+        const js_alertApple=()=>{
+            const box = localStorage.getItem('appleBox')
+            const finalBox = JSON.parse(box);
+            console.log(finalBox)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_addApple()">과일 담기</button>
+    <button onclick="js_alertApple()">과일 꺼내기</button>
+</body>
+</html>
