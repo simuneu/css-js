@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문, 쿼리스트링</title>
+    <script>
+        const queryString = location.search;
+        const box = new URLSearchParams(queryString);
+        const friNum = box.get("num")
+
+        const friBox = localStorage.getItem("friendList")
+        const friendList = JSON.parse(friBox ===null?"[]":friBox)
+        alert(`${friendList[friNum].name}의 페이지에 오신 것을 환영`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

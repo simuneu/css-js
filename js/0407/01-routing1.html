@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문, 쿼리스트링</title>
+    <script>
+        const js_addFriend=()=>{
+            const fri1= {
+                name:'lee', 
+                age:12,
+            }
+            const fri2= {
+                name:'kim', 
+                age:12,
+            }
+            const friBox = [fri1, fri2];
+            localStorage.setItem('friendList', JSON.stringify(friBox));
+        }
+        const js_makingFriend=()=>{
+            //1 친구 목록 가져오기
+            const friBox=localStorage.getItem('friendList')
+            const friArr = JSON.parse(friBox===null?"[]":friBox);
+
+            //2 배열 반복해 태그 생성
+            //<div><a href="./02-routing-detail.html?num=0">name : lee, age : 12</a></div>  
+            //<div><a href="./02-routing-detail.html?num=1">name : lee, age : 12</a></div>  
+            const ListHTML = friArr.map((el, i)=>`
+                <div>
+                    <a href="./02-routing-detail.html?num=${i}">
+                        name : ${el.name},  age : ${el.age}
+                    </a>
+                </div>        
+            `).join("") //ListHTML.join("")과 동일
+            //3 ListHTML그리기
+            document.getElementById("html_friendList").innerHTML=ListHTML
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_addFriend()">친구 등록</button>
+    <button onclick="js_makingFriend()">친구 생성</button>
+    <div id="html_friendList"></div>
+</body>
+</html>

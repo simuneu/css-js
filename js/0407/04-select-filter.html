@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택박스, 필터</title>
+    <script>
+        //인풋변경
+        const js_input=(event)=>{
+            console.log(event.target);
+            console.log(event.target.value);
+        }
+
+        //2선택변경
+        const js_filtering=(event)=>{
+            console.log(event.target) //<select>
+            console.log(event.target.value) //선택한 값 ex.사과 선택
+
+            const friend =[
+                {name:'lee',fruit:'banana'},
+                {name:'park',fruit:'banana'},
+                {name:'kim',fruit:'apple'},
+            ]
+
+            const choiceFruit=event.target.value;
+            switch(choiceFruit){
+                case'사과 선택':{
+                    const appleLover=friend.filter((el)=>el.fruit==='apple')
+                    console.log(appleLover)
+                    break;
+                }
+                case'바나나 선택':{
+                    const bananaLover=friend.filter((el)=>el.fruit==='banana')
+                    console.log(bananaLover)
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" oninput="js_input(event)">
+    
+    <br><br>
+
+    <select onchange="js_filtering(event)">
+        <option>선택</option>
+        <option value="사과 선택">사과</option>
+        <option value="바나나 선택">바나나</option>
+    </select>
+</body>
+</html>
