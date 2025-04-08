@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-element</title>
+    <style>
+        .css_box{
+            width: 1000px;
+            height: 500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        const js_scroll=()=>{
+            // document.querySelector('.css_box').scrollTo({top:0}) //맨위
+            // document.querySelector('.css_box').scrollBy({top:-500}) //현 위치에서 500만큼 위로
+            document.querySelector('.css_box').scrollTo({top:0,behavior:"smooth"})//스크롤 부드럽게
+        }
+    </script>
+</head>
+<body>
+    <div class="css_box">
+        <img src="./00-image.jpg" width="2000px">
+        <button onclick="js_scroll()">스크롤 올리기</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우 스크롤</title>
+    <script>
+        window.addEventListener('scroll',()=>{
+            const scrollLength = window.screenY
+            console.log(`${scrollLength}만큼 내려감`)
+            if(scrollLength>0){
+                document.getElementById('html_img').style="border:20px solid red"
+            }else{
+                document.getElementById('html_img').style="border:none;"
+            }
+        })
+    </script>
+</head>
+<body>
+    <img id="html_img" src="./00-image.jpg" width="1000px">
+</body>
+</html>

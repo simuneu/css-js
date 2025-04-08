@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-window</title>
+    <script>
+        const js_scroll=()=>{
+            // window.scrollTo({top:0}) //맨위
+            // window.scrollBy({top:-500}) //현 위치에서 500만큼 위로
+            window.scrollTo({top:0,behavior:"smooth"})//스크롤 부드럽게
+        }
+    </script>
+</head>
+<body>
+    <img src="./00-image.jpg" width="2000px">
+    <button onclick="js_scroll()">스크롤 올리기</button>
+</body>
+</html>
