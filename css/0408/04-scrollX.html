@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤X</title>
+    <style>
+        .css_box{
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            height: 300px;
+            border: 1px solid blue;
+            overflow-x: scroll;
+        }
+        .css_son{
+            flex-shrink: 0; /*부모가 flex일 때 형태 변환없게 하기*/
+            width: 150px;
+            height: 180px;
+            background-color: aliceblue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box">
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+        <div class="css_son"></div>
+    </div>
+</body>
+</html>
