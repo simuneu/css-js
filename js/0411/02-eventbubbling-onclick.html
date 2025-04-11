@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 버블링 onclick</title>
+    <style>
+        .css_box{
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const js_img=()=>{
+            document.querySelector('.css_box').style="width:100vw;"
+        }
+        const js_like=(event)=>{
+            event.stopPropagation();
+            alert(`좋아요가 1 올랐습니다.`)
+        }
+    </script>
+</head>
+<body>
+    <div class="css_box" onclick="js_img()">
+        <button onclick="js_like(event)">좋아요</button>
+    </div>
+    <p>사진을 클릭하면 전체화면으로 볼 수 있습니다.</p>
+</body>
+</html>
