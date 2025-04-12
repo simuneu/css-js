@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리+순서변경</title>
+    <style>
+        .css_box{
+            display: flex;
+            flex-direction: row;
+        }
+        .css_imgGroup{
+            background-color: aliceblue;
+            padding: 50px;
+        }
+        .css_img{
+            width: 150px;
+            height: 150px;
+        }
+        .css_input{
+            width: 300px;
+            background-color: antiquewhite;
+        }
+        @media(max-width:767px){
+            .css_box{
+                flex-direction: column;
+            }
+            .css_imgGroup{
+                order: 2
+            }
+            .css_input{
+                order: 1
+            }   
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box">
+        <div class="css_imgGroup">
+            <img class="css_img" src="../../js/0409/00-image.jpg">
+            <img class="css_img" src="../../js/0409/00-image.jpg">
+            <img class="css_img" src="../../js/0409/00-image.jpg">
+            <img class="css_img" src="../../js/0409/00-image.jpg">
+        </div>
+        <div class="css_input">
+            <h1>강아지 옷 등록</h1>
+            <input type="text">
+            <button>등록하기</button>
+        </div>
+    </div>
+</body>
+</html>
