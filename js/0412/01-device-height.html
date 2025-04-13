@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디바이스 높이 감지</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .css_button{
+            position: fixed;
+            bottom: 10px;
+            left: 90%;
+        }   
+        .css_footer{
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        window.addEventListener("scroll",()=>{
+            //const currentHeight = window.scrollY
+            const currentHeight = document.documentElement.scrollTop
+            console.log(currentHeight);
+            if(currentHeight >=1111){
+                document.querySelector('.css_button').style=`position:relative;bottom:40px;left:90% `
+            }else{
+                document.querySelector('.css_button').style=`position: fixed;bottom: 10px;left: 90%;`
+            }
+        } )
+    </script>
+</head>
+<body>
+    <img src="../0409/00-image.jpg" width="100%">
+    <button class="css_button">^</button>
+    <div class="css_footer">footer</div>
+</body>
+</html>
