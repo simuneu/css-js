@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 , 플렉스 비교</title>
+    <style>
+        .css_flex{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 400px;
+            gap: 10px;
+            background-color: aliceblue;
+        }
+        .css_grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+            width: 400px;
+            background-color: aliceblue;
+        }
+        .css_button{
+            width: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_flex">
+        <div class="css_button">신용카드</div>
+        <div class="css_button">계좌이체</div>
+        <div class="css_button">핸드폰결제</div>
+        <div class="css_button">무통장입금</div>
+        <div class="css_button">포인트결제</div>
+    </div>
+    <br>
+    <br>
+    <div class="css_grid">
+        <div class="css_button">신용카드</div>
+        <div class="css_button">계좌이체</div>
+        <div class="css_button">핸드폰결제</div>
+        <div class="css_button">무통장입금</div>
+        <div class="css_button">포인트결제</div>
+    </div>
+    <div></div>
+</body>
+</html>
