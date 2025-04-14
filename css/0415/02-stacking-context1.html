@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stacking</title>
+    <style>
+        .css_group{
+            width: 1000px;
+            height: 1000px;
+            background-color: thistle;
+            margin: 100px;
+            padding: 100px;
+
+            /*쌓임맥락에서는  position을 포함한 태그 안에서 부모 재정의*/
+            position:absolute;
+        }
+        .css_box{
+            width: 500px;
+            height: 500px;
+            background-color: wheat;
+        }
+        .css_box1{
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+
+            position: absolute; /*쌓임맥락에 포함*/
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
+        .css_box2{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+
+            position: absolute;
+            top:25px;
+            left: 25px;
+
+            z-index: 1;
+        }
+        .css_box3{
+            width: 100px;
+            height: 100px;
+            background-color: gainsboro;
+
+            position: absolute;
+            top:50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_group">
+        <div class="css_box">
+            <div class="css_box1"></div>
+            <div class="css_box2"></div>
+            <div class="css_box3"></div>
+        </div>
+
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        .css_box1{
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+        }
+        .css_box2{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+
+            position: absolute;
+            top:25px;
+            left: 25px;
+
+            z-index: 1;
+        }
+        .css_box3{
+            width: 100px;
+            height: 100px;
+            background-color: gainsboro;
+
+            position: absolute;
+            top:50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_box1"></div>
+    <div class="css_box2"></div>
+    <div class="css_box3"></div>
+</body>
+</html>
