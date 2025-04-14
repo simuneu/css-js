@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>핀치줌</title>
+    <script>
+        const js_expand=()=>{
+            document.body.style="background-color : black"
+            document.querySelector("#css_img").style="width:100%"
+            document.getElementsByName("viewport")[0].content=`
+                width=device-width, 
+                initial-scale=1.0,
+                minimum-scale=1.0,
+                maximum-scale=3.0,
+                user-scalable=yes
+            `
+        }
+    </script>
+</head>
+<body>
+    <img id="css_img"src="../0409/00-image.jpg" width="200px" onclick="js_expand()">
+</body>
+</html>

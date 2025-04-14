@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 바닥감지 </title>
+    <script>
+        window.addEventListener("scroll", ()=>{
+            const scrollDownLength= document.documentElement.scrollTop;// =scrollY
+            const scrollBarLength = document.documentElement.clientHeight //스크롤바 길이
+            const scrollLength = document.documentElement.scrollHeight //전체 스크롤 길이
+            console.log(`스크롤 전체 길이 : ${scrollLength}`)
+            console.log(`스크롤 내린 길이+스크롤바 길이 : ${scrollDownLength+scrollBarLength}`)
+
+            if(scrollLength <= Math.ceil(scrollDownLength+scrollBarLength)){
+                alert('스크롤이 바닥에 닿았음')
+            }
+         })
+    </script>
+</head>
+<body>
+    <img src="../0409/00-image.jpg" width="100%">
+</body>
+</html>
