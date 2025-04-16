@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달</title>
+    <style>
+        .css_modal_background{
+            display: none;
+
+            position: absolute;
+            top: 0;
+            left:0;
+
+            width: 50vw;
+            height: 50vh;
+            background-color: aliceblue;
+            opacity: 70%;
+        }
+    </style>
+    <script>
+        const js_modalOpen=()=>{
+            document.querySelector(".css_modal_background").style=
+                "display:block; "
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_modalOpen()">모달열기</button>
+    <div class="css_modal_background"></div>
+</body>
+</html>

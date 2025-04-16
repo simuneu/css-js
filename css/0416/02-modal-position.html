@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 위치</title>
+    <style>
+        .css_group{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .css_background{
+            width: 50vw;
+            height: 50vh;
+            background-color: antiquewhite;
+            opacity: 50%;
+        }
+        .css_modal{
+            position: absolute;
+            top:calc(50% - 250px/2);
+            left:calc(50% - 200px/2);
+            width: 200px;
+            height: 250px;
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        const js_openModal=()=>{
+            document.querySelector(".css_group").style=
+                "display: block;"
+        }
+        const js_closeModal=()=>{
+            document.querySelector(".css_group").style=
+                "display: none;"
+        }
+    </script>
+</head>
+<body>
+    <button  onclick="js_openModal()">모달 열기</button>
+    <!-- 모달영역 -->
+    <div class="css_group">
+        <div class="css_background" onclick="js_closeModal()"></div>
+        <div class="css_modal"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 중첩</title>
+    <style>
+        .css_group, css_group2{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .css_background{
+            width: 100vw;
+            height: 100vh;
+            background-color: antiquewhite;
+            opacity: 50%;
+            position: absolute;
+        }
+        .css_modal{
+            position: absolute;
+            top:50%;
+            left:50%;
+            width: 200px;
+            height: 250px;
+            transform: translate(-50%, -50%);
+            background-color: aliceblue;
+        }
+        .css_modal2{
+            position: absolute;
+            top:50%;
+            left:50%;
+            width: 300px;
+            height: 75px;
+            transform: translate(-50%, -50%);
+            background-color: thistle;
+        }
+    </style>
+    <script>
+        const js_openModal=(targetModal)=>{
+            document.querySelector(`.${targetModal}`).style.display = "block";
+        }
+        const js_closeModal=(targetModal)=>{
+            document.querySelector(`.${targetModal}`).style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <button  onclick="js_openModal('css_group')">모달 열기</button>
+    <!-- 등록모달영역 -->
+    <div class="css_group">
+        <div class="css_background" onclick="js_closeModal('css_group')"></div>
+        <div class="css_modal">
+            <div>제목 : <input type="text"></div>
+            <div>내용 : <textarea ></textarea></div>
+            <div><button onclick="js_openModal('css_group')">등록하기</button></div>
+        </div>
+    </div>
+    <!-- 등록완료모달영역 -->
+    <div class="css_group2">
+        <div class="css_background" onclick="js_closeModal('css_group2')"></div>
+        <div class="css_modal2">등록 완료</div>
+    </div>
+</body>
+</html>
