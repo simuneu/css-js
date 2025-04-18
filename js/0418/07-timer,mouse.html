@@ -34,17 +34,24 @@
             myHammer.style.left=`${event.clientX+5}px`
         })
 
-        const js_catch=()=>{
-            document.querySelector('.css_dog1').style="display:none"
+        const js_catch=(dog)=>{
+            const target = document.getElementsByClassName(dog);
+            for(let i =0; i<target.length; i++){
+                target[i].style="display:none";
+            }
+
             setTimeout(()=>{
-                document.querySelector('.css_dog1').style="display:block"
-            },2000)
+                for(let i =0; i<target.length; i++){
+                target[i].style="display:none";
+                target[i].style="display:block"
+                }
+            },500)
         }
     </script>
 </head>
 <body>
     <img src="./00-hammer.png" class="css_hammer">
-    <img src="../0409/00-image.jpg"class="css_dog1" onclick="js_catch('')">
-    <img src="../0409/00-image.jpg"class="css_dog2" onclick="js_catch('')">
+    <img src="../0409/00-image.jpg"class="css_dog1" onclick="js_catch('css_dog1')">
+    <img src="../0409/00-image.jpg"class="css_dog2" onclick="js_catch('css_dog2')">
 </body>
 </html>
