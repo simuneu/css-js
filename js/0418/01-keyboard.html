@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 감지 실습</title>
+    <style>
+        .css_dog{
+            width: 100px;
+            height: 100px; 
+            top:300px;
+            left:400px;
+            position: absolute;
+        }
+    </style>
+    <script>
+        let booster = 1.0;
+        window.addEventListener("keydown", ()=>{
+            const dog = document.querySelector(".css_dog");
+            const dogStyle = getComputedStyle(dog)
+            const dogY=Number(dogStyle.top.replace("px", ""));
+            const dogX=Number(dogStyle.left.replace("px", ""));
+
+            switch(event.key){
+                case "ArrowUp":{
+                    //강아지 위로 20만큼 올리기 = -20
+                    document.querySelector(".css_dog").style=`top:${(dogY-20)/booster}px;left${dogX}px`
+                    break;
+                }
+                case "ArrowDown":{
+                    //아래로 +20
+                    document.querySelector(".css_dog").style=`top:${(dogY+20)*booster}px;left${dogX}px`
+                    break;
+                }
+                case "ArrowLeft":{
+                    document.querySelector(".css_dog").style=`top:${dogY}px;left:${(dogX-20)/booster}px`
+                    break;
+                }
+                case "ArrowRight":{
+                    document.querySelector(".css_dog").style=`top:${dogY}px;left:${(dogX+20)*booster}px`
+                    break;
+                }
+                case " " :{
+                    //속도 +0.1
+                    booster+=0.1;
+                    console.log(booster)
+                }
+                
+            }
+        })
+    </script>
+</head>
+<body>
+    <img class="css_dog" src="../0409/00-image.jpg">
+</body>
+</html>

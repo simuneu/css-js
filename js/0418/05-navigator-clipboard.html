@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클립보드</title>
+    <script>
+        const js_copy=()=>{
+            const content = document.getElementById("content").innerText
+            navigator.clipboard.writeText(content);
+            alert('복사되었습니다.')
+        }
+        const js_copy2=()=>{
+            const content = document.getElementById("content").innerText
+            navigator.clipboard.writeText(`[다이어리] : ${content}`);
+            alert('새로 복사되었습니다.')
+        }
+    </script>
+</head>
+<body>
+    <div id="content" >안녕</div>
+    <button onclick="js_copy()">내용복사</button>
+    <button onclick="js_copy2()">새로복사</button>
+</body>
+</html>

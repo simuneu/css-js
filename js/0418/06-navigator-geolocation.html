@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치</title>
+    <script>
+        const spot = [
+            {name : "berry berry", latitude: 37.1823717, longitude: 127.3819273},
+            {name : "butter house", latitude: 37.2823717, longitude: 127.4819273},
+            {name : "apple house", latitude: 37.3823717, longitude: 127.5819273},
+        ]
+        const js_search=()=>{
+            navigator.geolocation.getCurrentPosition((location)=>{
+                const myLatitude= location.coords.latitude
+                const myLongitude= location.coords.longitude
+                alert(`당신의 위치는 ${myLatitude},${myLongitude}!`)
+
+                spot.forEach((el)=>{
+                    console.log(myLatitude-el.latitude)
+                    const nearLatitude= Math.abs(myLatitude-el.latitude)<=0.5 ? true:false
+                    const nearLongitude= Math.abs(myLongitude-el.longitude)<=0.5 ? true:false
+
+                    if(nearLatitude===true&&nearLongitude===true){
+                        alert(`${el.name}가 가까이에 있어요`)
+                    }
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_search()">근처 맛집 보기</button>
+</body>
+</html>

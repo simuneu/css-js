@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <script>
+        const register=()=>{
+            alert('게시글 등록 완료')
+        }
+        const js_like=()=>{
+            alert("좋아요+1")
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="register()">
+        제목 : <input type="text"><br>
+        내용 : <input type="text"><br>
+        <button type="submit">등록하기</button><br>
+        <button type="reset">지우기</button><br>
+        <button type="button" onclick="js_like()">좋아요</button><br>
+
+        <button>등록하기 (default=submit)</button>
+    </form>
+</body>
+</html>
