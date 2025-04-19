@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 맞춤 비율</title>
+    <style>
+        .css_scroll{
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            height: 100vh;
+            overflow: scroll;
+        }
+        .css_img{
+            width: 300px;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+    </style>
+</head>
+<body>
+    <div class="css_scroll">
+        <img src="./img/00-image.jpg" class="css_img">
+        <img src="./img/00-image2.jpg"class="css_img">
+        <img src="./img/00-image3.jpg"class="css_img">
+        <img src="./img/00-image4.jpg"class="css_img">
+        <img src="./img/00-image5.jpg"class="css_img">
+        <img src="./img/00-image6.jpg"class="css_img">
+    </div>
+</body>
+</html>

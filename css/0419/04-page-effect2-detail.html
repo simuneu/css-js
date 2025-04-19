@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지이동효과</title>
+    <style>
+        .css_box{
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        .css_page{
+            animation-name: pageAnimation;
+            animation-duration: 0.4s;
+        }
+        @keyframes pageAnimation{
+            from{
+                transform: translate(100%);
+            }
+            to{
+                transform: translate(0%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="css_page">
+        <div class="css_box"></div>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+        
+        <div class="css_box"></div>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+        <p>상세페이지</p>
+    </div>
+</body>
+</html>

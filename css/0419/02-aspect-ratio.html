@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 비율</title>
+    <style>
+        .css_img1{
+            width: 300px;
+            /* 비율은 가로세로 둘 중 하나만 작성해도 됨 */
+            aspect-ratio: 3 /1; /*가로 세로*/
+        }
+        .css_img2{
+            height: 300px;
+            aspect-ratio: 1 /3;
+        }
+        .css_tag{
+            height: 300px;
+            aspect-ratio: 1 /2;
+        }
+    </style>
+</head>
+<body>
+    <div>3:1 가로를 알 때</div>
+    <img  class="css_img1" src="../../js/0409/00-image.jpg">
+    <br>
+    <br>
+    <div>3:1 세로를 알 때</div>
+    <img  class="css_img2" src="../../js/0409/00-image.jpg">
+    <br>
+    <br>
+    <div>1:2 태그도 가능</div>
+    <button class="css_tag">버튼</button>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 이동 동시</title>
+    <style>
+        .css_box{
+            background-color: aliceblue;
+            width: 1000px;
+            height: 200px;
+            margin: 10px;
+        }
+        /*애니메이션 사용되는 페이지는 모두 view-transition적용하기*/
+        @view-transition{
+            navigation:auto;
+        }
+        @keyframes pageBackAnimation{
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(100%);
+            }
+        }
+        ::view-transition-old(root){
+            animation-name: pageBackAnimation;
+            animation-duration: 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="./06-viewtransition2-detail.html">페이지 이동</a>
+    <div class="css_box"></div>
+    <div class="css_box"></div>
+    <div class="css_box"></div>
+</body>
+</html>
