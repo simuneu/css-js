@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 api 응용</title>
+    <script>
+        const js_img=()=>{
+            fetch("https://dog.ceo/api/breeds/image/random/3").then((result)=>{
+                result.json().then((secResult)=>{
+                    console.log( secResult);
+
+                    document.getElementById("html_dog").innerHTML=
+                        secResult.message.map((el)=>
+                            `<img src="${el}" width="300px"/>`
+                        ).join("")
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_img()">이미지 불러오기</button>
+    <div id="html_dog"></div>
+</body>
+</html>

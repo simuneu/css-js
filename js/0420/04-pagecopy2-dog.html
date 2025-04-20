@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 복사</title>
+    <style>
+        .css_banner{
+            height: 100px;
+            background-color: aliceblue;
+        }
+        .css_navigation{    
+            height: 50px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        const js_menuGo=(click)=>{
+            switch(click){
+                case "diary":{
+                    location.href="./04-pagecopy-diary.html"
+                    break;
+                }
+                case "dog":{
+                    location.href="./04-pagecopy2-dog.html"
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="css_banner">배너 이미지</div>
+    <div class="css_navigation">
+        <button onclick="js_menuGo()">일기</button>
+        <button onclick="js_menuGo()">강아지</button>
+    </div>
+    <div>
+        <div>강아지 목록 화면</div>
+        <div>강아지1</div>
+        <div>강아지2</div>
+        <div>...</div>
+    </div>
+</body>
+</html>

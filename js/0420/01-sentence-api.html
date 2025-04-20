@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문장 api</title>
+    <script>
+        const js_sentence=()=>{
+            fetch("http://main-example.codebootcamp.co.kr/board/1").then((result)=>{
+                result.json().then((secResult)=>{
+                    console.log(`결과 : ${JSON.stringify(secResult)}`)
+                    console.log("서버 응답:", secResult);
+                    alert(secResult.title)
+                    alert(secResult.contents)
+
+                    const box = secResult.title;
+                    console.log(`변수로 담기기 : ${box}`)
+
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_sentence()">문장 불러오기</button>
+</body>
+</html>

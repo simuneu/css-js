@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe</title>
+    <style>
+        .css_banner{
+            height: 100px;
+            background-color: aliceblue;
+        }
+        .css_navigation{    
+            height: 50px;
+            background-color: antiquewhite;
+        }
+        iframe{
+            border: none;
+        }
+    </style>
+    <script>
+        const js_menuGo=(click)=>{
+            switch(click){
+                case "diary":{
+                    document.getElementById('html_iframe').src="./05-iframe2-diary.html"
+                    break;
+                }
+                case "dog":{
+                    document.getElementById('html_iframe').src="./05-iframe3-dog.html"
+                    break;
+                }
+                case "menu3":{
+                    document.getElementById('html_iframe').src="https://www.google.com/"
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="css_banner">배너 이미지</div>
+    <div class="css_navigation">
+        <button onclick="js_menuGo('diary')">일기</button>
+        <button onclick="js_menuGo('dog')">강아지</button>
+        <button onclick="js_menuGo('menu3')">메뉴3</button>
+    </div>
+    <iframe id="html_iframe" src="./05-iframe2-diary.html"></iframe>
+</body>
+</html>
