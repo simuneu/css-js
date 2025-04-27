@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드 </title>
+    <style>
+        .css_toggle{
+            appearance: none;
+            width: 40px;
+            height: 24px;
+            background-color: lightgray;
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .css_toggle::after{
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .css_toggle:checked{
+            background-color: lightpink;
+        }
+        .css_toggle:checked::after{
+            transform: translateX(calc(100% - 2px - 2px));
+        }
+
+        /* 다크모드 설정 */
+        .css_darkMode{
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <script>
+        const js_dark=()=>{
+            document.body.classList.toggle("css_darkMode")
+        }
+    </script>
+</head>
+<body>
+        <input type="checkbox" class="css_toggle"onclick="js_dark()"><br><br>
+        이메일 <input type="text"><br>
+        비밀번호 <input type="password"><br>
+        <button>회원가입</button>
+</body>
+</html>
