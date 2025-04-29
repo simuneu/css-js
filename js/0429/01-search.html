@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색</title>
+    <script>
+        const friend=['lee', 'kim','song', 'choi']
+        const js_search=()=>{
+            const searchTarget=event.target.value;
+            console.log(searchTarget)
+
+            const searchResult=friend.filter((el)=>el.includes(searchTarget))
+            console.log(searchResult)
+
+            document.getElementById('html_result').innerText=searchResult
+        }
+    </script>
+</head>
+<body> 
+    <input type="text" placeholder="검색하세요" oninput="js_search(event)">
+    <div id="html_result"></div>
+</body>
+</html>
