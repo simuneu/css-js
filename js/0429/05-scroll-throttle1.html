@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한 스크롤</title>
+    <style>
+        .css_box{
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            margin: 50px;
+        }
+    </style>
+    <script>
+        let timer = 'yet'
+        window.addEventListener("scroll", ()=>{
+            if(timer==='yet'){
+                const scrollPercent = 
+                    document.documentElement.scrollTop / (document.documentElement.scrollHeight-document.documentElement.clientHeight)
+                console.log('스크롤 검사')
+                if(scrollPercent >=0.7){
+                    console.log('상자를 그림');
+                    document.getElementById('html_boxSection').innerHTML+=`<div class="css_box"></div>`
+                }
+                timer = setTimeout(()=>{
+                    timer = 'yet'
+                },500)
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="html_boxSection">
+        <div class="css_box"></div>
+        <div class="css_box"></div>
+        <div class="css_box"></div>
+    </div>
+</body>
+</html>

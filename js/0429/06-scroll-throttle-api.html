@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한 스크롤</title>
+    <style>
+        .css_box{
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            margin: 50px;
+        }
+    </style>
+    <script>
+        let timer = 'yet'
+        window.addEventListener("scroll", ()=>{
+            if(timer!=='yet') return;
+          
+            timer = setTimeout(()=>{
+                timer = 'yet'
+            },500)
+            
+            const scrollPercent = 
+                document.documentElement.scrollTop / (document.documentElement.scrollHeight-document.documentElement.clientHeight)
+            if(!(scrollPercent >=0.7)) return;
+
+            fetch("https://dog.ceo/api/breeds/image/random").then((result)=>{
+                result.json().then((secResult)=>{
+                    console.log( secResult);
+
+                    document.getElementById("html_boxSection").innerHTML +=`<div><img src="${secResult.message}" width="300px"/><div>`
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="html_boxSection">
+        <div class="css_box"></div>
+        <div class="css_box"></div>
+        <div class="css_box"></div>
+    </div>
+</body>
+</html>
