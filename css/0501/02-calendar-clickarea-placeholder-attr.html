@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <style>
+        .calendar{
+            position: relative;
+            width: 150px;
+        }
+        .calendar::-webkit-calendar-picker-indicator{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1;
+        }
+        .calendar::-webkit-datetime-edit-text,
+        ::-webkit-datetime-edit-year-field,
+        ::-webkit-datetime-edit-month-field,
+        ::-webkit-datetime-edit-day-field{
+            display: none;
+        }
+
+        .calendar::after{
+            content:attr(data-calendar);
+            position:absolute;
+            top:0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="date" class="calendar" data-calendar="생일을 선택하세요"/>
+</body>
+</html>
