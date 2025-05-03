@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지네이션</title>
+    <script>
+        let startPage=1;
+        const js_prev=()=>{
+            startPage=startPage-10
+            js_pagination()
+        }
+        const js_next=()=>{
+            startPage = startPage+10
+            js_pagination()
+            
+        }
+
+        const js_pagination=()=>{
+            const page = new Array(10).fill('페이지');
+            console.log(page)
+            const page_area= page.map((el,index)=> `
+                <button>${index+startPage}</button>
+            `).join("")
+
+            document.getElementById('page_section').innerHTML=page_area
+        }
+
+        window.onload=()=>{
+            js_pagination()
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="js_prev()">이전 페이지</button>
+    <span id="page_section"></span>
+    <button onclick="js_next()">다음 페이지</button>
+</body>
+</html>
