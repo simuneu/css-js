@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fout foit</title>
+    <style>
+        @font-face {
+            font-family: font1;
+            src: url("./00-myfont02.woff2");
+            font-display: block; /*폰트 로드될 때 까지 안 보여줌*=>다운 실패시 기본/
+                /*크롬 기본*/
+            }
+        @font-face {
+            font-family: font2;
+            src: url("./00-myfont02.woff2");
+            font-display: swap; /*기본폰트 후 다운되면 보여줌*/
+
+        }
+        .css_foit{
+            font-family: font1;
+        }
+        .css_fout{
+            font-family: font2;
+        }
+        /*f12 >network no >throttling 설정에서 보기*/
+    </style>
+</head>
+<body>
+    <div class="css_foit">foit폰트</div>
+    <div class="css_fout">fout폰트</div>
+</body>
+</html>
