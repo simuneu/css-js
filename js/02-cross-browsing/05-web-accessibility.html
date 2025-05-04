@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 접근성 실습</title>
+</head>
+<body>
+    <!-- 웹 접근성 이미지 안내 -->
+    <img src="../0409/00-image.jpg" width="100px" alt="강아지">
+    <!-- 웹 접근성 차단 -->
+    <img src="../0409/00-image.jpg" width="100px" alt="강아지" aria-hidden="true"/>
+    <!-- 웹 접근성 기본 -->
+     <button>버튼</button>
+     <button aria-label="cool_button">버튼</button> <!-- 버튼 대신 coolbbutton을 읽음음 -->
+     <button role="alert">버튼</button> <!-- 역할 부여 -->
+     <button role="search">버튼</button>
+
+</body>
+</html>

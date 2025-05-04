@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크로스 브라우징</title>
+    <!-- 폴리필 다운로드 (브라우저별 제공되지 않는 js기능들을 만들어 놓은 것) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.41.0/minified.js"></script>
+    <script>
+        const js_fruit=()=>{
+            const fruits =['apple','banana','kiwi']
+            console.log(fruits[fruits.length-1])
+            console.log(fruits.at(-1)) //버전에 따라 안 되는 브라우저 존재
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_fruit()">과일</button>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크로스 브라우징</title>
+    <script>
+        const js_exam=()=>{
+            const exam_date = new Date("2020-02-02 22:22:22") //크롬
+            const exam_date2 = new Date("2020/02/02 22:22:22") //사파리
+            const month = exam_date.getMonth()+1
+            alert(`자격증 시험일은 ${month}월 입니다.`)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="js_exam()">시험날짜</button>
+</body>
+</html>
