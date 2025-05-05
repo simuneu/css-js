@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀페이지js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.js" integrity="sha512-x5JY7KTULoGmcgxguKf5p4i3wfx7qXlY3OMjqez4Pj8BPoMn4krRQmwDtOwF81F+/9Be+jvhBsKOIaPPZmRelQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.css" integrity="sha512-grbNqap+/rctn1fIPhhz+5y9PwsQOVoWRuTdwe7mE2nh/ypC2Mclow4EIjVExz8A3IT5gmweWz37Zn2Rofpc3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        window.onload=()=>{
+            new fullpage('#fullpage', {
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+    <div class="section">1 section</div>
+    <div class="section">2 section</div>
+    <div class="section">3 section</div>
+    <div class="section">4 section</div>
+</div>
+</body>
+</html>

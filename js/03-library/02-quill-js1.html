@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 에디터</title>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+</head>
+<body>
+    <div id="editor">
+        <p>프로필 입력!</p>
+        <p><br /></p>
+    </div>
+    <button onclick="js_profile()">등록하기</button>
+</body>
+
+<script>
+    const quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+    const js_profile=()=>{
+        const self = quill.getSemanticHTML()
+        // const self = quill.root.innerHTML
+        console.log(self)
+
+        localStorage.setItem("self", self)
+        quill.setText("프로필 입력!")
+    }
+</script>
+</html>

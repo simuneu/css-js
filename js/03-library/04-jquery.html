@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        const js_register=()=>{
+            // document.getElementById("html_profile").innerHTML="<p>이름 : 철수</p>"
+            // document.querySelector("#html_profile").style="color:red;"
+
+            $("#html_profile").html("<p>이름 : 철수</p>")
+            // $('#html_profile').css("color","red")
+            $('#html_profile')[0].style="color:red"
+
+        }
+    </script>
+</head>
+<body>
+    <div id="html_profile"></div>
+    <button onclick="js_register()">등록하기</button>
+</body>
+</html>
