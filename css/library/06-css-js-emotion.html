@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css in js(emotion)</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emotion/css@11.13.5/dist/emotion-css.umd.min.js"></script>
+    <script>
+        window.onload=()=>{
+            const css_button = window.emotion.css`
+                background-color:aliceblue;   
+            `
+            document.getElementById('html_box').innerHTML=`
+                <button class="${css_button}">등록하기</button>
+            `
+        }
+    </script>
+</head>
+<body>
+    <div id="html_box"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sass</title>
+    <style id="css_style">
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.sync.js" integrity="sha512-wI5qqA12M3fOxLvCz6nH+3Y3CO6p5kFhHD2cR1gk4xePDjclfsRC5l3B1XRmz6wpdieOssz4boO0ZVk+GvQE5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+         fetch("./01-upgrade-css.sass")
+        .then((sassfile) => sassfile.text())
+        .then((sassfiletext) => {
+        Sass.compile(sassfiletext, { indentedSyntax: true }, (css) => {
+          if (css.status === 0) {
+            document.getElementById("css_style").innerText = css.text;
+          } else {
+            console.error("SASS 컴파일 실패:", css);
+          }
+        });
+      });
+       
+    </script>
+</head>
+<body>
+    <button class="css_button_1">button1</button>
+    <button class="css_button_2">button2</button>
+    <button class="css_button_3">button3</button>
+</body>
+</html>

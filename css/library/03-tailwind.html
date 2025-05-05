@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            favoriteColor: 'pink',
+            color2: 'greenyellow'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- <style type="text/tailwindcss">
+    @layer utilities{
+        .content-auto {
+            content-visibility: auto;
+        }
+        .css1{
+            color: aliceblue;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+    </style> -->
+
+</head>
+<body class="p-4">
+  <h1 class="text-3xl font-bold underline text-favoriteColor bg-color2">
+    hello world!
+  </h1>
+  <!-- <div class="sm:css1 lg:content-auto">
+    작을 때
+    클 때는 숨김
+ </div> -->
+</body>
+</html>
